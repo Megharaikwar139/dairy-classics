@@ -6,8 +6,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dairy Classics | Pure Artisanal Joy</title>
-  <meta name="description" content="100% single-origin farm milk, slow-churned artisanal ice cream. Discover Dairy Classics.">
+  <title>Dairy Classic | Pure Artisanal Joy Since 1996</title>
+  <meta name="description" content="100% single-origin farm milk, slow-churned artisanal ice cream in Uzbekistan since 1996. Discover Dairy Classic cones, sticks, cups, biscuits, cassattas and tubs.">
   <link rel="stylesheet" href="assets/css/shared.css">
   <link rel="stylesheet" href="assets/css/design1.css">
 </head>
@@ -40,8 +40,8 @@
         </p>
 
         <div class="art-cta-row">
-          <a href="#flavors" class="btn-art-primary" id="art-order-cta" onclick="addToCart(currentFlavor.name)">
-            <span>Order Delivery</span>
+          <a href="#catalog-showcase" class="btn-art-primary" id="art-order-cta">
+            <span>Explore All Treats</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
@@ -153,7 +153,7 @@
       </div>
 
       <div class="showcase-slider-card">
-        <!-- Minimal Top HUD Bar with Slider Navigation (Timer Removed) -->
+        <!-- Minimal Top HUD Bar with Slider Navigation -->
         <div class="showcase-top-bar">
           <div class="showcase-counter-pill">
             <span class="showcase-counter-num" id="showcase-counter-text">01 / 06</span>
@@ -257,7 +257,6 @@
         <div class="pints-cards-track" id="pints-track">
           <?php foreach ($products as $id => $p): ?>
             <div class="pints-pop-card">
-              <!-- Clean Card: Removed behind-image tag badge -->
               <div class="card-tub-popout">
                 <img src="<?= $p['image'] ?>" alt="<?= $p['name'] ?>" loading="lazy">
               </div>
@@ -266,7 +265,6 @@
               <h3 class="card-pop-title"><?= $p['name'] ?></h3>
               <p class="card-pop-desc"><?= htmlspecialchars($p['description']) ?></p>
 
-              <!-- Clean Static Action Row (No Price, Clean Quality Hallmark) -->
               <div class="card-foot-action-row" style="justify-content: center;">
                 <span class="card-pure-badge" style="width: 100%; text-align: center;">100% Real Farm Milk</span>
               </div>
@@ -292,27 +290,57 @@
       </div>
 
       <div class="categories-grid">
-        <div class="cat-explore-card" data-card-index="0">
+        <a href="#catalog-showcase" class="cat-explore-card" data-category-target="cones">
           <div class="cat-explore-img-wrap">
-            <img src="assets/images/products/golden-fantasy.png" alt="Gourmet Cones" class="cat-explore-img">
+            <img src="assets/images/live/golden-f.webp" alt="Gourmet Cones" class="cat-explore-img">
             <div class="card-landing-ripple"></div>
             <div class="card-drop-shadow"></div>
           </div>
           <h3 class="cat-explore-title">Gourmet Cones</h3>
-          <span class="cat-explore-sub">Golden Fantasy & Choco Boom</span>
-        </div>
+          <span class="cat-explore-sub">Golden Fantasy, Choco Boom & Super Twist</span>
+        </a>
 
-        <div class="cat-explore-card" data-card-index="1">
+        <a href="#catalog-showcase" class="cat-explore-card" data-category-target="sticks">
           <div class="cat-explore-img-wrap">
-            <img src="assets/images/products/almond-crunch-bar.png" alt="Sticks & Bars" class="cat-explore-img">
+            <img src="assets/images/live/bera-n.webp" alt="Sticks & Bars" class="cat-explore-img">
             <div class="card-landing-ripple"></div>
             <div class="card-drop-shadow"></div>
           </div>
           <h3 class="cat-explore-title">Sticks & Bars</h3>
-          <span class="cat-explore-sub">Almond Praline & Vega Bar</span>
-        </div>
+          <span class="cat-explore-sub">Vega, Super Choc & Classic Vega</span>
+        </a>
 
-        <div class="cat-explore-card" data-card-index="2">
+        <a href="#catalog-showcase" class="cat-explore-card" data-category-target="cups">
+          <div class="cat-explore-img-wrap">
+            <img src="assets/images/live/Layer-1.webp" alt="Cups & Creamica" class="cat-explore-img">
+            <div class="card-landing-ripple"></div>
+            <div class="card-drop-shadow"></div>
+          </div>
+          <h3 class="cat-explore-title">Cups & Creamica</h3>
+          <span class="cat-explore-sub">Creamica Cheese Cake & Ambroziya Mini Cups</span>
+        </a>
+
+        <a href="#catalog-showcase" class="cat-explore-card" data-category-target="biscuit">
+          <div class="cat-explore-img-wrap">
+            <img src="assets/images/live/sandwich.webp" alt="Biscuit Sandwiches" class="cat-explore-img">
+            <div class="card-landing-ripple"></div>
+            <div class="card-drop-shadow"></div>
+          </div>
+          <h3 class="cat-explore-title">Biscuit Sandwiches</h3>
+          <span class="cat-explore-sub">Sandwich, Bricket, Olino & Round Pie</span>
+        </a>
+
+        <a href="#catalog-showcase" class="cat-explore-card" data-category-target="cassatta">
+          <div class="cat-explore-img-wrap">
+            <img src="assets/images/live/Classic-Cassata.png" alt="Cassatta & Cakes" class="cat-explore-img">
+            <div class="card-landing-ripple"></div>
+            <div class="card-drop-shadow"></div>
+          </div>
+          <h3 class="cat-explore-title">Cassatta & Cakes</h3>
+          <span class="cat-explore-sub">1 LTR Classic Cassatta & Galaxy Cassatta</span>
+        </a>
+
+        <a href="#catalog-showcase" class="cat-explore-card" data-category-target="tubs">
           <div class="cat-explore-img-wrap">
             <img src="assets/images/products/belgian-chocolate-tub.png" alt="Artisanal Tubs" class="cat-explore-img">
             <div class="card-landing-ripple"></div>
@@ -320,17 +348,76 @@
           </div>
           <h3 class="cat-explore-title">Artisanal Tubs</h3>
           <span class="cat-explore-sub">500ml Churned Gourmet Pints</span>
-        </div>
+        </a>
+      </div>
+    </div>
+  </section>
 
-        <div class="cat-explore-card" data-card-index="3">
-          <div class="cat-explore-img-wrap">
-            <img src="assets/images/products/chocolate-celebration-cake.png" alt="Gateau Cakes" class="cat-explore-img">
-            <div class="card-landing-ripple"></div>
-            <div class="card-drop-shadow"></div>
-          </div>
-          <h3 class="cat-explore-title">Celebration Cakes</h3>
-          <span class="cat-explore-sub">Layered Gelato Gateaux</span>
-        </div>
+  <!-- ========================================================
+       NEW SECTION: COMPLETE INTERACTIVE PRODUCT PORTFOLIO (dairyclassics.com)
+       ======================================================== -->
+  <section class="section-catalog-portfolio" id="catalog-showcase">
+    <div class="container">
+      <div class="art-section-head text-center">
+        <span class="art-kicker">ALL CREATIONS &bull; SINCE 1996</span>
+        <h2 class="art-title">Full Dairy Classic Portfolio</h2>
+        <p class="art-desc" style="max-width: 680px; margin: 10px auto 0;">
+          Select a category below to explore all handcrafted frozen delights from Uzbekistan's #1 ice cream maker.
+        </p>
+      </div>
+
+      <!-- Filter Tabs Navigation -->
+      <div class="catalog-filter-bar">
+        <button class="catalog-tab-btn active" data-filter="all">
+          <span>✨ All Products</span>
+        </button>
+        <button class="catalog-tab-btn" data-filter="cones">
+          <span>🍦 Cones (7)</span>
+        </button>
+        <button class="catalog-tab-btn" data-filter="sticks">
+          <span>🍫 Sticks (10)</span>
+        </button>
+        <button class="catalog-tab-btn" data-filter="cups">
+          <span>🍨 Cups (7)</span>
+        </button>
+        <button class="catalog-tab-btn" data-filter="biscuit">
+          <span>🍪 Biscuit (4)</span>
+        </button>
+        <button class="catalog-tab-btn" data-filter="cassatta">
+          <span>🍰 Cassatta (3)</span>
+        </button>
+        <button class="catalog-tab-btn" data-filter="tubs">
+          <span>🍧 Pints & Tubs (3)</span>
+        </button>
+      </div>
+
+      <!-- Dynamic Filterable Products Grid -->
+      <div class="catalog-grid" id="catalog-products-grid">
+        <?php foreach ($catalog_by_category as $catKey => $catData): ?>
+          <?php foreach ($catData['items'] as $item): ?>
+            <div class="catalog-card" data-category="<?= $catKey ?>">
+              <div class="catalog-card-badge"><?= $item['badge'] ?></div>
+              <div class="catalog-card-visual">
+                <img src="<?= $item['image'] ?>" alt="<?= $item['name'] ?>" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta"><?= $catData['category_name'] ?> &bull; <?= $item['size'] ?></span>
+                <h3 class="catalog-card-title"><?= $item['name'] ?></h3>
+                <p class="catalog-card-desc"><?= htmlspecialchars($item['description']) ?></p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('<?= addslashes($item['name']) ?>', '<?= addslashes($catData['category_name']) ?>', '<?= addslashes($item['size']) ?>', '<?= addslashes($item['image']) ?>', '<?= addslashes($item['description']) ?>', '<?= addslashes($item['badge']) ?>')"
+                          aria-label="View Details for <?= $item['name'] ?>">
+                    <span>Details ↗</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          <?php endforeach; ?>
+        <?php endforeach; ?>
       </div>
     </div>
   </section>
@@ -379,11 +466,157 @@
           </div>
 
           <div class="story-actions-row">
-            <a href="#video-craft" class="btn-story-white">
-              <span>Our story</span>
+            <a href="#about-heritage" class="btn-story-white">
+              <span>Our Full Story</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       NEW SECTION: ABOUT US & FOUNDER'S VISION & DEVELOPMENTS (dairyclassics.com)
+       ======================================================== -->
+  <section class="section-about-deep-heritage" id="about-heritage">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="art-section-head text-center">
+        <span class="art-kicker">A LEGACY OF EXCELLENCE SINCE 1996</span>
+        <h2 class="art-title">We at Foreign Company Singapore Samarkand</h2>
+        <p class="art-desc" style="max-width: 720px; margin: 10px auto 0;">
+          Under the brand Dairy Classic, we have been delighting taste buds for over 30 years with our core motto: <strong>"Healthy Living"</strong> from the very beginning!
+        </p>
+      </div>
+
+      <!-- Core Highlights Banner -->
+      <div class="about-pillars-banner">
+        <div class="about-pillar-card">
+          <div class="pillar-icon">🎯</div>
+          <h4>Our Motto</h4>
+          <p>"Healthy Living" from the very beginning!</p>
+        </div>
+        <div class="about-pillar-card">
+          <div class="pillar-icon">❤️</div>
+          <h4>Our Drive</h4>
+          <p>Quality, passion, and the joy of ice cream.</p>
+        </div>
+        <div class="about-pillar-card">
+          <div class="pillar-icon">🌏</div>
+          <h4>Our Reach</h4>
+          <p>A leading ice cream brand, bringing happiness to millions.</p>
+        </div>
+      </div>
+
+      <!-- Founder's Vision Split Card -->
+      <div class="heritage-split-story-card">
+        <div class="heritage-img-column">
+          <img src="assets/images/live/founder.webp" alt="Dairy Classic Founder's Vision" loading="lazy">
+          <div class="heritage-img-caption">
+            <span>Founder &amp; President &bull; Dairy Classic</span>
+          </div>
+        </div>
+        <div class="heritage-text-column">
+          <span class="kicker-pink">LEADERSHIP &amp; PURPOSE</span>
+          <h3 class="heritage-story-title">Founder’s Vision</h3>
+          <p class="heritage-story-lead">
+            Under the visionary leadership and expertise of our Founder & President, Dairy Classic has built a trusted reputation over the last three decades.
+          </p>
+          <div class="founder-points-list">
+            <div class="founder-point-item">
+              <div class="point-num">01</div>
+              <div>
+                <strong>Integrity & Quality</strong>
+                <p>We are known for premium, trustworthy products crafted from 100% natural ingredients.</p>
+              </div>
+            </div>
+            <div class="founder-point-item">
+              <div class="point-num">02</div>
+              <div>
+                <strong>Innovation & Growth</strong>
+                <p>Investing in cutting-edge European technology & high-precision manufacturing machinery.</p>
+              </div>
+            </div>
+            <div class="founder-point-item">
+              <div class="point-num">03</div>
+              <div>
+                <strong>Strong Presence</strong>
+                <p>Present in leading supermarkets, parlours, and convenience stores across Uzbekistan.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Developments Split Card -->
+      <div class="heritage-split-story-card reverse-layout">
+        <div class="heritage-img-column">
+          <img src="assets/images/live/developments.webp" alt="Dairy Classic Recent Developments Plant" loading="lazy">
+          <div class="capacity-stat-badge">
+            <span class="stat-number">80,000L</span>
+            <span class="stat-label">Daily Capacity</span>
+          </div>
+        </div>
+        <div class="heritage-text-column">
+          <span class="kicker-pink">MODERNIZATION &amp; GROWTH</span>
+          <h3 class="heritage-story-title">Recent Developments</h3>
+          <p class="heritage-story-lead">
+            Our 80,000-litre daily production capacity ensures we deliver nothing but the finest, most flavorful ice cream to our loyal customers across Uzbekistan and beyond.
+          </p>
+          <ul class="developments-bullets">
+            <li>
+              <span class="check-icon">✓</span>
+              <span><strong>Modernization of our ice cream plant</strong> with state-of-the-art European hygiene standards.</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span><strong>Advanced technology</strong> for world class, ultra-creamy, slow-churned production.</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span><strong>Awarded #1 choice</strong> by our passionate ice cream consumers across the nation.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Mission & Vision Dual Cards -->
+      <div class="mission-vision-grid">
+        <div class="mv-card mission-card">
+          <div class="mv-head">
+            <span class="mv-tag">OUR PURPOSE</span>
+            <h3 class="mv-title">Our Mission</h3>
+          </div>
+          <ul class="mv-list">
+            <li><span>🌟</span> Spreading the love for ice cream.</li>
+            <li><span>🍨</span> Bringing joy with every scoop.</li>
+            <li><span>🌿</span> Promoting healthy living through quality and innovation.</li>
+          </ul>
+        </div>
+
+        <div class="mv-card vision-card">
+          <div class="mv-head">
+            <span class="mv-tag">OUR AMBITION</span>
+            <h3 class="mv-title">Our Vision</h3>
+          </div>
+          <ul class="mv-list">
+            <li><span>🌍</span> Deliver world class flavors &amp; quality to our consumers.</li>
+            <li><span>⚙️</span> Use cutting edge manufacturing &amp; technology.</li>
+            <li><span>🤝</span> Create value for customers, employees &amp; society. Achieve sustainable growth across all markets.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Sweet Moments Distribution Banner -->
+      <div class="sweet-moments-banner">
+        <div class="smb-content">
+          <span class="smb-kicker">NATIONWIDE NETWORK</span>
+          <h3 class="smb-title">Bringing Sweet Moments Closer</h3>
+          <p class="smb-desc">Find us across Uzbekistan and beyond — in leading stores, parlors, and cafes! Retail &amp; Wholesale Availability partnering with Top Food Chains.</p>
+        </div>
+        <div class="smb-action">
+          <a href="#contact-us" class="btn-smb-cta">Partner With Us ↗</a>
         </div>
       </div>
     </div>
@@ -481,26 +714,26 @@
             Crafted with passion, our ice creams bring pure delight in every bite. Made with the finest ingredients, we ensure a rich, creamy experience. From classic flavors to exciting twists, there's something for everyone. Taste the tradition, love the flavor!
           </p>
           <div class="heritage-actions-row">
-            <a href="#flavors" class="btn-heritage-primary">Explore Treats</a>
-            <a href="#about" class="btn-heritage-secondary">Our Story</a>
+            <a href="#catalog-showcase" class="btn-heritage-primary">Explore Treats</a>
+            <a href="#about-heritage" class="btn-heritage-secondary">Our Story</a>
           </div>
         </div>
 
         <div class="indulgence-img-collage">
           <div class="indulgence-collage-item">
-            <img src="assets/images/products/golden-fantasy.png" alt="Golden Fantasy Cone" loading="lazy">
+            <img src="assets/images/live/golden-f.webp" alt="Golden Fantasy Cone" loading="lazy">
             <span class="collage-item-name">Golden Fantasy</span>
           </div>
           <div class="indulgence-collage-item">
-            <img src="assets/images/products/round-pie.webp" alt="Round Pie" loading="lazy">
+            <img src="assets/images/live/round.webp" alt="Round Pie" loading="lazy">
             <span class="collage-item-name">Round Pie</span>
           </div>
           <div class="indulgence-collage-item">
-            <img src="assets/images/products/sandwich.webp" alt="Sandwich Biscuit" loading="lazy">
+            <img src="assets/images/live/sandwich.webp" alt="Sandwich Biscuit" loading="lazy">
             <span class="collage-item-name">Sandwich Biscuit</span>
           </div>
           <div class="indulgence-collage-item">
-            <img src="assets/images/products/vega-bar.png" alt="Vega Bar" loading="lazy">
+            <img src="assets/images/live/bera-n.webp" alt="Vega Bar" loading="lazy">
             <span class="collage-item-name">Vega Crunchy Bar</span>
           </div>
         </div>
@@ -521,7 +754,7 @@
             Bringing smiles with every scoop, one indulgence at a time. From nostalgic classics to exciting new treats, we have it all. A world of flavor, crafted for pure happiness. Dive into delight today!
           </p>
           <div class="heritage-actions-row">
-            <a href="#about" class="btn-heritage-primary">About Us</a>
+            <a href="#about-heritage" class="btn-heritage-primary">About Us</a>
             <a href="#stores" class="btn-heritage-secondary">Find a Parlour</a>
           </div>
         </div>
@@ -578,6 +811,87 @@
     </div>
   </section>
 
+  <!-- ========================================================
+       NEW SECTION: INTERACTIVE FAQS ACCORDION (dairyclassics.com/faqs/)
+       ======================================================== -->
+  <section class="section-faqs-accordion" id="faqs">
+    <div class="container">
+      <div class="art-section-head text-center">
+        <span class="art-kicker">FREQUENTLY ASKED QUESTIONS</span>
+        <h2 class="art-title">Want Some Answers?</h2>
+        <p class="art-desc" style="max-width: 600px; margin: 10px auto 0;">
+          Everything you need to know about our ice creams, production standards, and partnership opportunities.
+        </p>
+      </div>
+
+      <!-- FAQ Category Filter Tabs -->
+      <div class="faq-category-nav">
+        <?php $fIndex = 0; foreach ($faqs_data as $catKey => $cat): ?>
+          <button class="faq-tab-btn <?= $fIndex === 0 ? 'active' : '' ?>" data-faq-cat="<?= $catKey ?>">
+            <span><?= $cat['icon'] ?> <?= $cat['category'] ?></span>
+          </button>
+        <?php $fIndex++; endforeach; ?>
+      </div>
+
+      <!-- FAQ Accordions Container -->
+      <div class="faq-accordions-wrapper">
+        <?php $fIndex = 0; foreach ($faqs_data as $catKey => $cat): ?>
+          <div class="faq-accordion-group <?= $fIndex === 0 ? 'active' : '' ?>" id="faq-group-<?= $catKey ?>">
+            <?php foreach ($cat['questions'] as $qIndex => $item): ?>
+              <div class="faq-item <?= ($fIndex === 0 && $qIndex === 0) ? 'open' : '' ?>">
+                <button class="faq-question-btn" aria-expanded="<?= ($fIndex === 0 && $qIndex === 0) ? 'true' : 'false' ?>">
+                  <span class="faq-q-text"><?= $item['q'] ?></span>
+                  <span class="faq-icon-toggle">+</span>
+                </button>
+                <div class="faq-answer-pane">
+                  <p><?= $item['a'] ?></p>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        <?php $fIndex++; endforeach; ?>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       NEW SECTION: INSTAGRAM SOCIAL SHOWCASE (@dairyclassic.uz)
+       ======================================================== -->
+  <section class="section-instagram-showcase" id="instagram-feed">
+    <div class="container">
+      <div class="art-section-head text-center">
+        <span class="art-kicker">FOLLOW OUR SWEET MOMENTS</span>
+        <h2 class="art-title">@dairyclassic.uz on Instagram</h2>
+        <p class="art-desc" style="max-width: 600px; margin: 10px auto 0;">
+          Tag your delicious moments with <strong>#DairyClassic</strong> for a chance to be featured on our official channel.
+        </p>
+      </div>
+
+      <div class="insta-gallery-grid">
+        <?php foreach ($instagram_posts as $post): ?>
+          <a href="https://www.instagram.com/dairyclassic.uz/" target="_blank" rel="noopener noreferrer" class="insta-card">
+            <div class="insta-img-wrap">
+              <img src="<?= $post['image'] ?>" alt="Dairy Classic Instagram Moment" loading="lazy">
+              <div class="insta-overlay">
+                <span class="insta-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </span>
+                <span class="insta-likes">❤️ <?= $post['likes'] ?></span>
+              </div>
+            </div>
+            <p class="insta-caption"><?= htmlspecialchars($post['caption']) ?></p>
+          </a>
+        <?php endforeach; ?>
+      </div>
+
+      <div class="text-center" style="margin-top: 36px;">
+        <a href="https://www.instagram.com/dairyclassic.uz/" target="_blank" rel="noopener noreferrer" class="btn-insta-follow">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <span>Follow @dairyclassic.uz</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- ========================================================
        SECTION 10: GOT A CRAVING OR A QUESTION? (Live Website Section)
@@ -588,10 +902,141 @@
         <h2>Got a Craving or a Question?</h2>
         <p>Have a question or looking for something special? We’d love to hear from you! Reach out and let’s make every moment delicious.</p>
         <div class="craving-cta-actions">
-          <a href="#stores" class="btn-cta-contact">Contact Us</a>
+          <a href="#contact-us" class="btn-cta-contact">Contact Us</a>
           <a href="tel:+998781203377" class="btn-cta-phone">
             <span>📞 +99878 120 33 77</span>
           </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       NEW SECTION: COMPLETE CONTACT FORM & FACTORY LOCATION MAP
+       ======================================================== -->
+  <section class="section-contact-full" id="contact-us">
+    <div class="container">
+      <div class="art-section-head text-center">
+        <span class="art-kicker">DISCOVER &amp; CONNECT</span>
+        <h2 class="art-title">Talk to Us! Let’s Discuss</h2>
+        <p class="art-desc" style="max-width: 650px; margin: 10px auto 0;">
+          Discover the magic behind every scoop. We’re here to share our story, values, and passion for crafting ice cream that brings people together.
+        </p>
+      </div>
+
+      <div class="contact-full-grid">
+        <!-- Interactive Contact / Inquiry Form -->
+        <div class="contact-form-card">
+          <div class="form-card-head">
+            <h3>Send an Inquiry</h3>
+            <p>Thank you for getting in touch! Kindly fill the form, have a great day!</p>
+          </div>
+
+          <form id="live-contact-form" onsubmit="handleContactSubmit(event)">
+            <div class="form-row-2col">
+              <div class="form-field">
+                <label for="c-name">Full Name *</label>
+                <input type="text" id="c-name" name="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-field">
+                <label for="c-email">Email Address *</label>
+                <input type="email" id="c-email" name="email" placeholder="name@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-row-2col">
+              <div class="form-field">
+                <label for="c-country">Country Code</label>
+                <select id="c-country" name="country">
+                  <option value="+998" selected>+998 (Uzbekistan)</option>
+                  <option value="+91">+91 (India)</option>
+                  <option value="+971">+971 (Dubai / UAE)</option>
+                  <option value="+44">+44 (UK)</option>
+                  <option value="+1">+1 (US / Canada)</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="c-phone">Phone Number *</label>
+                <input type="tel" id="c-phone" name="phone" placeholder="90 998 2019" required>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="c-interest">Interested In</label>
+              <select id="c-interest" name="interest">
+                <option value="Cones">Cones (Golden Fantasy, Choco Boom, Super Twist)</option>
+                <option value="Sticks">Sticks &amp; Bars (Vega, Super Choc, Delizia)</option>
+                <option value="Cups">Cups &amp; Creamica (Cheese Cake, Vanilla, Ambroziya)</option>
+                <option value="Biscuit">Biscuit &amp; Sandwiches (Bricket, Olino, Round Pie)</option>
+                <option value="Cassatta">Cassatta (Classic 1 LTR, Galaxy)</option>
+                <option value="Tubs">Gourmet 500ml Pints &amp; Tubs</option>
+                <option value="Wholesale">Wholesale &amp; Retail Distribution</option>
+                <option value="General">General Inquiry &amp; Feedback</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="c-message">Your Message *</label>
+              <textarea id="c-message" name="message" rows="4" placeholder="Tell us how we can make your sweet moments special..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-form-submit" id="btn-submit-inquiry">
+              <span>Send Message</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+
+            <div class="form-toast-msg" id="form-toast-msg" style="display: none;">
+              <span>🎉 Thank you! Your message has been sent successfully. Our team will contact you shortly.</span>
+            </div>
+          </form>
+        </div>
+
+        <!-- Contact Cards & Map -->
+        <div class="contact-info-map-card">
+          <div class="contact-quick-cards">
+            <div class="cq-item">
+              <span class="cq-icon">📍</span>
+              <div>
+                <strong>Visit Factory &amp; HQ</strong>
+                <p>БУТ 5, 65M6+H9 Tashkent, Uzbekistan. Factory location.</p>
+              </div>
+            </div>
+            <div class="cq-item">
+              <span class="cq-icon">📞</span>
+              <div>
+                <strong>Call Us Directly</strong>
+                <p>+99878 120 33 77 / 78 &bull; +998 90 992 2999</p>
+              </div>
+            </div>
+            <div class="cq-item">
+              <span class="cq-icon">📱</span>
+              <div>
+                <strong>Regional Support</strong>
+                <p>Tashkent: +998 90 998 2019<br>Samarkand: +998 90 502 9292</p>
+              </div>
+            </div>
+            <div class="cq-item">
+              <span class="cq-icon">✉️</span>
+              <div>
+                <strong>Email Us</strong>
+                <p><a href="mailto:support@dairyclassic.uz">support@dairyclassic.uz</a> &bull; <a href="mailto:jkapoor@me.com">jkapoor@me.com</a></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Google Maps Embed for Factory Location in Tashkent -->
+          <div class="map-embed-wrapper">
+            <iframe 
+              title="Dairy Classic Factory Location Tashkent"
+              src="https://maps.google.com/maps?q=41.2995,69.2401&hl=en&z=14&output=embed" 
+              width="100%" 
+              height="240" 
+              style="border:0; border-radius: 16px;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
         </div>
       </div>
     </div>

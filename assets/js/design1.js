@@ -94,6 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroFlavorSelector();
   initHeroParallax();
   initPintsSlider();
+  initCatalogFilter();
+  initFaqAccordions();
 });
 
 // ==========================================================
@@ -330,3 +332,185 @@ function initPintsSlider() {
   // Start auto-scroll on load
   startPintsAuto();
 }
+
+// ==========================================================
+// 4. CATALOG PORTFOLIO FILTER TABS
+// ==========================================================
+function initCatalogFilter() {
+  const filterBtns = document.querySelectorAll('.catalog-tab-btn');
+  const cards = document.querySelectorAll('.catalog-card');
+  const catExploreCards = document.querySelectorAll('.cat-explore-card[data-category-target]');
+
+  if (!filterBtns.length || !cards.length) return;
+
+  window.filterCatalogCategory = function(category) {
+    filterBtns.forEach(b => {
+      if (b.dataset.filter === category) {
+        b.classList.add('active');
+      } else {
+        b.classList.remove('active');
+      }
+    });
+
+    cards.forEach(card => {
+      const cardCat = card.dataset.category;
+      if (category === 'all' || cardCat === category) {
+        card.classList.remove('hidden');
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(15px)';
+        setTimeout(() => {
+          card.style.transition = 'all 0.35s ease';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 50);
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    // Smooth scroll to catalog showcase section
+    const showcaseSection = document.getElementById('catalog-showcase');
+    if (showcaseSection) {
+      showcaseSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      window.filterCatalogCategory(filter);
+    });
+  });
+
+  catExploreCards.forEach(c => {
+    c.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetCat = c.dataset.categoryTarget;
+      if (targetCat) {
+        window.filterCatalogCategory(targetCat);
+      }
+    });
+  });
+}
+
+// Quick View Tasting Notes Modal Function
+window.openCatalogItemQuickView = function(name, cat, size, img, desc, badge) {
+  const modalBackdrop = document.getElementById('quickview-modal-backdrop');
+  const qvImg = document.getElementById('qv-img');
+  const qvBadge = document.getElementById('qv-badge');
+  const qvTitle = document.getElementById('qv-title');
+  const qvSize = document.getElementById('qv-size');
+  const qvDesc = document.getElementById('qv-desc');
+
+  if (qvImg) qvImg.src = img;
+  if (qvBadge) qvBadge.textContent = badge || '100% Real Farm Milk';
+  if (qvTitle) qvTitle.textContent = name;
+  if (qvSize) qvSize.textContent = `${cat} • ${size}`;
+  if (qvDesc) qvDesc.textContent = desc;
+
+  const qvCal = document.getElementById('qv-cal');
+  const qvFat = document.getElementById('qv-fat');
+  const qvSugar = document.getElementById('qv-sugar');
+  const qvProt = document.getElementById('qv-prot');
+
+  if (qvCal) qvCal.textContent = '240 kcal';
+  if (qvFat) qvFat.textContent = '14g';
+  if (qvSugar) qvSugar.textContent = '18g';
+  if (qvProt) qvProt.textContent = '5.2g';
+
+  if (modalBackdrop) {
+    modalBackdrop.classList.add('active');
+  }
+};
+
+window.closeQuickView = function() {
+  const modalBackdrop = document.getElementById('quickview-modal-backdrop');
+  if (modalBackdrop) {
+    modalBackdrop.classList.remove('active');
+  }
+};
+
+// ==========================================================
+// 5. FAQ CATEGORY SWITCHER & ACCORDION EXPANSION
+// ==========================================================
+function initFaqAccordions() {
+  const faqTabBtns = document.querySelectorAll('.faq-tab-btn');
+  const faqGroups = document.querySelectorAll('.faq-accordion-group');
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  if (!faqTabBtns.length) return;
+
+  faqTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const catKey = btn.dataset.faqCat;
+      faqTabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      faqGroups.forEach(group => {
+        if (group.id === `faq-group-${catKey}`) {
+          group.classList.add('active');
+        } else {
+          group.classList.remove('active');
+        }
+      });
+    });
+  });
+
+  faqItems.forEach(item => {
+    const questionBtn = item.querySelector('.faq-question-btn');
+    if (!questionBtn) return;
+
+    questionBtn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      const parentGroup = item.closest('.faq-accordion-group');
+
+      if (parentGroup) {
+        parentGroup.querySelectorAll('.faq-item').forEach(other => {
+          other.classList.remove('open');
+          const btn = other.querySelector('.faq-question-btn');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        });
+      }
+
+      if (!isOpen) {
+        item.classList.add('open');
+        questionBtn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+}
+
+// ==========================================================
+// 6. CONTACT INQUIRY FORM SUBMISSION
+// ==========================================================
+window.handleContactSubmit = function(e) {
+  e.preventDefault();
+  const form = document.getElementById('live-contact-form');
+  const toast = document.getElementById('form-toast-msg');
+  const submitBtn = document.getElementById('btn-submit-inquiry');
+
+  if (submitBtn) {
+    submitBtn.innerHTML = '<span>Sending... ⏳</span>';
+    submitBtn.disabled = true;
+  }
+
+  setTimeout(() => {
+    if (toast) {
+      toast.style.display = 'block';
+    }
+    if (submitBtn) {
+      submitBtn.innerHTML = '<span>Message Sent! ✓</span>';
+      submitBtn.style.background = '#059669';
+    }
+    if (form) {
+      form.reset();
+    }
+    setTimeout(() => {
+      if (submitBtn) {
+        submitBtn.innerHTML = '<span>Send Message</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+        submitBtn.style.background = '';
+        submitBtn.disabled = false;
+      }
+    }, 4000);
+  }, 900);
+};

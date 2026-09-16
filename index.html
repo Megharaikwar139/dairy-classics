@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dairy Classics | Pure Artisanal Joy</title>
-  <meta name="description" content="100% single-origin farm milk, slow-churned artisanal ice cream. Discover Dairy Classics.">
+  <title>Dairy Classic | Pure Artisanal Joy Since 1996</title>
+  <meta name="description" content="100% single-origin farm milk, slow-churned artisanal ice cream in Uzbekistan since 1996. Discover Dairy Classic cones, sticks, cups, biscuits, cassattas and tubs.">
   <link rel="stylesheet" href="assets/css/shared.css">
   <link rel="stylesheet" href="assets/css/design1.css">
 </head>
@@ -14,8 +14,8 @@
 <!-- Header Navigation Bar -->
 <header class="site-header header-playful" id="site-header">
   <div class="container header-inner">
-    <!-- Brand Logo (User's Official Dairy Classic Logo) -->
-    <a href="index.html" class="brand-logo" aria-label="Dairy Classic Home">
+    <!-- Brand Logo (Official Dairy Classic Logo) -->
+    <a href="index.php" class="brand-logo" aria-label="Dairy Classic Home">
       <div class="brand-logo-badge">
         <img src="assets/images/dairy-classic-logo.jpg" alt="Dairy Classic Since 1996" class="brand-logo-img">
       </div>
@@ -28,10 +28,10 @@
     <!-- Exact Navigation from dairyclassics.com -->
     <nav class="main-nav" aria-label="Main Navigation">
       <ul class="nav-links">
-        <li><a href="#flavors" class="nav-link">Cones</a></li>
-        <li><a href="#flavors" class="nav-link">Sticks</a></li>
-        <li><a href="#categories" class="nav-link">Cups</a></li>
-        <li><a href="#categories" class="nav-link">Biscuit</a></li>
+        <li><a href="#catalog-showcase" class="nav-link" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('cones')">Cones</a></li>
+        <li><a href="#catalog-showcase" class="nav-link" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('sticks')">Sticks</a></li>
+        <li><a href="#catalog-showcase" class="nav-link" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('cups')">Cups</a></li>
+        <li><a href="#catalog-showcase" class="nav-link" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('biscuit')">Biscuit</a></li>
         
         <!-- Others Dropdown (Exact match to dairyclassics.com) -->
         <li class="nav-item-dropdown">
@@ -40,11 +40,11 @@
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
           </a>
           <ul class="nav-dropdown-menu">
-            <li><a href="#categories">Cassatta</a></li>
+            <li><a href="#catalog-showcase" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('cassatta')">Cassatta</a></li>
             <li><a href="#spin360">Tubs</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#craving-cta">FAQs</a></li>
-            <li><a href="#stores">Contact Us</a></li>
+            <li><a href="#about-heritage">About Us</a></li>
+            <li><a href="#faqs">FAQs</a></li>
+            <li><a href="#contact-us">Contact Us</a></li>
           </ul>
         </li>
       </ul>
@@ -70,7 +70,7 @@
         </a>
       </div>
 
-      <a href="#flavors" class="btn-header-cta btn-cta-pastel">
+      <a href="#catalog-showcase" class="btn-header-cta btn-cta-pastel">
         <span>Explore Treats</span>
       </a>
     </div>
@@ -102,8 +102,8 @@
         </p>
 
         <div class="art-cta-row">
-          <a href="#flavors" class="btn-art-primary" id="art-order-cta" onclick="addToCart(currentFlavor.name)">
-            <span>Order Delivery</span>
+          <a href="#catalog-showcase" class="btn-art-primary" id="art-order-cta">
+            <span>Explore All Treats</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
@@ -215,7 +215,7 @@
       </div>
 
       <div class="showcase-slider-card">
-        <!-- Minimal Top HUD Bar with Slider Navigation (Timer Removed) -->
+        <!-- Minimal Top HUD Bar with Slider Navigation -->
         <div class="showcase-top-bar">
           <div class="showcase-counter-pill">
             <span class="showcase-counter-num" id="showcase-counter-text">01 / 06</span>
@@ -318,7 +318,6 @@
       <div class="pints-track-viewport" id="pints-viewport">
         <div class="pints-cards-track" id="pints-track">
                       <div class="pints-pop-card">
-              <!-- Clean Card: Removed behind-image tag badge -->
               <div class="card-tub-popout">
                 <img src="assets/images/products/belgian-chocolate-tub.png" alt="Belgian Chocolate Truffle" loading="lazy">
               </div>
@@ -327,13 +326,11 @@
               <h3 class="card-pop-title">Belgian Chocolate Truffle</h3>
               <p class="card-pop-desc">Rich 72% dark Belgian cocoa ribbons folded into velvet chocolate gelato, crowned with crisp hand-curled dark chocolate shavings.</p>
 
-              <!-- Clean Static Action Row (No Price, Clean Quality Hallmark) -->
               <div class="card-foot-action-row" style="justify-content: center;">
                 <span class="card-pure-badge" style="width: 100%; text-align: center;">100% Real Farm Milk</span>
               </div>
             </div>
                       <div class="pints-pop-card">
-              <!-- Clean Card: Removed behind-image tag badge -->
               <div class="card-tub-popout">
                 <img src="assets/images/products/french-vanilla-tub.png" alt="French Vanilla Royale" loading="lazy">
               </div>
@@ -342,13 +339,11 @@
               <h3 class="card-pop-title">French Vanilla Royale</h3>
               <p class="card-pop-desc">Double-creamed farm milk steeped with aromatic Madagascar Bourbon vanilla pods and hand-scraped vanilla seeds for the ultimate silky comfort.</p>
 
-              <!-- Clean Static Action Row (No Price, Clean Quality Hallmark) -->
               <div class="card-foot-action-row" style="justify-content: center;">
                 <span class="card-pure-badge" style="width: 100%; text-align: center;">100% Real Farm Milk</span>
               </div>
             </div>
                       <div class="pints-pop-card">
-              <!-- Clean Card: Removed behind-image tag badge -->
               <div class="card-tub-popout">
                 <img src="assets/images/products/mint-pistachio-tub.png" alt="Mint Pistachio Crunch" loading="lazy">
               </div>
@@ -357,58 +352,50 @@
               <h3 class="card-pop-title">Mint Pistachio Crunch</h3>
               <p class="card-pop-desc">Fresh garden spearmint infused into double-creamed milk, folded with roasted California pistachios and dark chocolate chips.</p>
 
-              <!-- Clean Static Action Row (No Price, Clean Quality Hallmark) -->
               <div class="card-foot-action-row" style="justify-content: center;">
                 <span class="card-pure-badge" style="width: 100%; text-align: center;">100% Real Farm Milk</span>
               </div>
             </div>
                       <div class="pints-pop-card">
-              <!-- Clean Card: Removed behind-image tag badge -->
               <div class="card-tub-popout">
-                <img src="assets/images/products/golden-fantasy.png" alt="Golden Fantasy Swirl Cone" loading="lazy">
+                <img src="assets/images/live/golden-f.webp" alt="Golden Fantasy Swirl Cone" loading="lazy">
               </div>
 
               <span class="card-meta-category">Gourmet Cone ΓÇó 120 ml Waffle Cone</span>
               <h3 class="card-pop-title">Golden Fantasy Swirl Cone</h3>
-              <p class="card-pop-desc">Split of two flavours vanilla and chocolate in crunchy wafer coated with chocolate along with roasted peanuts for surprisingly divine taste.</p>
+              <p class="card-pop-desc">Split of two flavour vanilla and chocolate in crunchy wafer coated with chocolate along with roasted peanuts surpringly divine taste.</p>
 
-              <!-- Clean Static Action Row (No Price, Clean Quality Hallmark) -->
               <div class="card-foot-action-row" style="justify-content: center;">
                 <span class="card-pure-badge" style="width: 100%; text-align: center;">100% Real Farm Milk</span>
               </div>
             </div>
                       <div class="pints-pop-card">
-              <!-- Clean Card: Removed behind-image tag badge -->
               <div class="card-tub-popout">
-                <img src="assets/images/products/choco-boom.png" alt="Choco Boom Cone" loading="lazy">
+                <img src="assets/images/live/boom-c.webp" alt="Choco Boom Cone" loading="lazy">
               </div>
 
               <span class="card-meta-category">Gourmet Cone ΓÇó 120 ml Waffle Cone</span>
               <h3 class="card-pop-title">Choco Boom Cone</h3>
               <p class="card-pop-desc">Chocolate ice cream filled in crunchy wafer coated with chocolate along with crispy roasted peanuts that give distinctive taste to your mood pleasure.</p>
 
-              <!-- Clean Static Action Row (No Price, Clean Quality Hallmark) -->
               <div class="card-foot-action-row" style="justify-content: center;">
                 <span class="card-pure-badge" style="width: 100%; text-align: center;">100% Real Farm Milk</span>
               </div>
             </div>
                       <div class="pints-pop-card">
-              <!-- Clean Card: Removed behind-image tag badge -->
               <div class="card-tub-popout">
-                <img src="assets/images/products/super-twist.png" alt="Super Twist Raspberry Cone" loading="lazy">
+                <img src="assets/images/live/twist-x.webp" alt="Super Twist Raspberry Cone" loading="lazy">
               </div>
 
               <span class="card-meta-category">Gourmet Cone ΓÇó 120 ml Waffle Cone</span>
               <h3 class="card-pop-title">Super Twist Raspberry Cone</h3>
-              <p class="card-pop-desc">Vanilla Ice cream centered Raspberry sauce filled in crunchy wafer coated chocolate, winning the soul and taste buds of ice cream lovers.</p>
+              <p class="card-pop-desc">Vanilla Ice cream centered Raspberry sauce filled in crunchy wafer coated chocolate, won the soul and taste bud of ice cream lover.</p>
 
-              <!-- Clean Static Action Row (No Price, Clean Quality Hallmark) -->
               <div class="card-foot-action-row" style="justify-content: center;">
                 <span class="card-pure-badge" style="width: 100%; text-align: center;">100% Real Farm Milk</span>
               </div>
             </div>
                       <div class="pints-pop-card">
-              <!-- Clean Card: Removed behind-image tag badge -->
               <div class="card-tub-popout">
                 <img src="assets/images/products/almond-crunch-bar.png" alt="Almond Crunch Praline Bar" loading="lazy">
               </div>
@@ -417,58 +404,50 @@
               <h3 class="card-pop-title">Almond Crunch Praline Bar</h3>
               <p class="card-pop-desc">Thick roasted California almond praline shell crackles open to reveal dense, slow-churned pure milk ice cream on a natural beechwood stick.</p>
 
-              <!-- Clean Static Action Row (No Price, Clean Quality Hallmark) -->
               <div class="card-foot-action-row" style="justify-content: center;">
                 <span class="card-pure-badge" style="width: 100%; text-align: center;">100% Real Farm Milk</span>
               </div>
             </div>
                       <div class="pints-pop-card">
-              <!-- Clean Card: Removed behind-image tag badge -->
               <div class="card-tub-popout">
-                <img src="assets/images/products/round-pie.webp" alt="Round Pie Cookie Sandwich" loading="lazy">
+                <img src="assets/images/live/round.webp" alt="Round Pie Cookie Sandwich" loading="lazy">
               </div>
 
               <span class="card-meta-category">Sandwich ΓÇó 95 ml Sandwich</span>
               <h3 class="card-pop-title">Round Pie Cookie Sandwich</h3>
               <p class="card-pop-desc">Imaginative creation perfectly round vanilla ice cream with premium cookies coated with chocolate.</p>
 
-              <!-- Clean Static Action Row (No Price, Clean Quality Hallmark) -->
               <div class="card-foot-action-row" style="justify-content: center;">
                 <span class="card-pure-badge" style="width: 100%; text-align: center;">100% Real Farm Milk</span>
               </div>
             </div>
                       <div class="pints-pop-card">
-              <!-- Clean Card: Removed behind-image tag badge -->
               <div class="card-tub-popout">
-                <img src="assets/images/products/sandwich.webp" alt="Sandwich Biscuit Duo" loading="lazy">
+                <img src="assets/images/live/sandwich.webp" alt="Sandwich Biscuit Duo" loading="lazy">
               </div>
 
               <span class="card-meta-category">Biscuit ΓÇó 100 ml Sandwich</span>
               <h3 class="card-pop-title">Sandwich Biscuit Duo</h3>
-              <p class="card-pop-desc">Vanilla and chocolate ice cream half sandwiched between crunchy biscuit and half dipped in chocolate with roasted peanuts, irresistible taste and delicious treat on the go.</p>
+              <p class="card-pop-desc">Vanilla and chocolate ice cream half sandwiched between crunchy biscuit and half dipped in chocolate with roasted peanuts, irresistible taste and delicious treat on go.</p>
 
-              <!-- Clean Static Action Row (No Price, Clean Quality Hallmark) -->
               <div class="card-foot-action-row" style="justify-content: center;">
                 <span class="card-pure-badge" style="width: 100%; text-align: center;">100% Real Farm Milk</span>
               </div>
             </div>
                       <div class="pints-pop-card">
-              <!-- Clean Card: Removed behind-image tag badge -->
               <div class="card-tub-popout">
-                <img src="assets/images/products/vega-bar.png" alt="Vega Crunchy Choco Bar" loading="lazy">
+                <img src="assets/images/live/bera-n.webp" alt="Vega Crunchy Choco Bar" loading="lazy">
               </div>
 
               <span class="card-meta-category">Sticks ΓÇó 90 ml Gourmet Stick</span>
               <h3 class="card-pop-title">Vega Crunchy Choco Bar</h3>
-              <p class="card-pop-desc">Delicious vanilla flavoured premium ice cream coated with luscious crunchy chocolate along with crispy roasted peanuts on a stick.</p>
+              <p class="card-pop-desc">Delicious Vanilla flavoured premium ice cream coated with luscious crunchy chocolate along with crispy roasted peanuts on a stick.</p>
 
-              <!-- Clean Static Action Row (No Price, Clean Quality Hallmark) -->
               <div class="card-foot-action-row" style="justify-content: center;">
                 <span class="card-pure-badge" style="width: 100%; text-align: center;">100% Real Farm Milk</span>
               </div>
             </div>
                       <div class="pints-pop-card">
-              <!-- Clean Card: Removed behind-image tag badge -->
               <div class="card-tub-popout">
                 <img src="assets/images/products/chocolate-celebration-cake.png" alt="Triple-Layer Gateau Cake" loading="lazy">
               </div>
@@ -477,7 +456,6 @@
               <h3 class="card-pop-title">Triple-Layer Gateau Cake</h3>
               <p class="card-pop-desc">Architectural trio of Belgian dark chocolate, white vanilla cream, and milk chocolate sponge, glazed in dark ganache drip, fresh strawberries, and gold accents.</p>
 
-              <!-- Clean Static Action Row (No Price, Clean Quality Hallmark) -->
               <div class="card-foot-action-row" style="justify-content: center;">
                 <span class="card-pure-badge" style="width: 100%; text-align: center;">100% Real Farm Milk</span>
               </div>
@@ -502,27 +480,57 @@
       </div>
 
       <div class="categories-grid">
-        <div class="cat-explore-card" data-card-index="0">
+        <a href="#catalog-showcase" class="cat-explore-card" data-category-target="cones">
           <div class="cat-explore-img-wrap">
-            <img src="assets/images/products/golden-fantasy.png" alt="Gourmet Cones" class="cat-explore-img">
+            <img src="assets/images/live/golden-f.webp" alt="Gourmet Cones" class="cat-explore-img">
             <div class="card-landing-ripple"></div>
             <div class="card-drop-shadow"></div>
           </div>
           <h3 class="cat-explore-title">Gourmet Cones</h3>
-          <span class="cat-explore-sub">Golden Fantasy & Choco Boom</span>
-        </div>
+          <span class="cat-explore-sub">Golden Fantasy, Choco Boom & Super Twist</span>
+        </a>
 
-        <div class="cat-explore-card" data-card-index="1">
+        <a href="#catalog-showcase" class="cat-explore-card" data-category-target="sticks">
           <div class="cat-explore-img-wrap">
-            <img src="assets/images/products/almond-crunch-bar.png" alt="Sticks & Bars" class="cat-explore-img">
+            <img src="assets/images/live/bera-n.webp" alt="Sticks & Bars" class="cat-explore-img">
             <div class="card-landing-ripple"></div>
             <div class="card-drop-shadow"></div>
           </div>
           <h3 class="cat-explore-title">Sticks & Bars</h3>
-          <span class="cat-explore-sub">Almond Praline & Vega Bar</span>
-        </div>
+          <span class="cat-explore-sub">Vega, Super Choc & Classic Vega</span>
+        </a>
 
-        <div class="cat-explore-card" data-card-index="2">
+        <a href="#catalog-showcase" class="cat-explore-card" data-category-target="cups">
+          <div class="cat-explore-img-wrap">
+            <img src="assets/images/live/Layer-1.webp" alt="Cups & Creamica" class="cat-explore-img">
+            <div class="card-landing-ripple"></div>
+            <div class="card-drop-shadow"></div>
+          </div>
+          <h3 class="cat-explore-title">Cups & Creamica</h3>
+          <span class="cat-explore-sub">Creamica Cheese Cake & Ambroziya Mini Cups</span>
+        </a>
+
+        <a href="#catalog-showcase" class="cat-explore-card" data-category-target="biscuit">
+          <div class="cat-explore-img-wrap">
+            <img src="assets/images/live/sandwich.webp" alt="Biscuit Sandwiches" class="cat-explore-img">
+            <div class="card-landing-ripple"></div>
+            <div class="card-drop-shadow"></div>
+          </div>
+          <h3 class="cat-explore-title">Biscuit Sandwiches</h3>
+          <span class="cat-explore-sub">Sandwich, Bricket, Olino & Round Pie</span>
+        </a>
+
+        <a href="#catalog-showcase" class="cat-explore-card" data-category-target="cassatta">
+          <div class="cat-explore-img-wrap">
+            <img src="assets/images/live/Classic-Cassata.png" alt="Cassatta & Cakes" class="cat-explore-img">
+            <div class="card-landing-ripple"></div>
+            <div class="card-drop-shadow"></div>
+          </div>
+          <h3 class="cat-explore-title">Cassatta & Cakes</h3>
+          <span class="cat-explore-sub">1 LTR Classic Cassatta & Galaxy Cassatta</span>
+        </a>
+
+        <a href="#catalog-showcase" class="cat-explore-card" data-category-target="tubs">
           <div class="cat-explore-img-wrap">
             <img src="assets/images/products/belgian-chocolate-tub.png" alt="Artisanal Tubs" class="cat-explore-img">
             <div class="card-landing-ripple"></div>
@@ -530,18 +538,766 @@
           </div>
           <h3 class="cat-explore-title">Artisanal Tubs</h3>
           <span class="cat-explore-sub">500ml Churned Gourmet Pints</span>
-        </div>
-
-        <div class="cat-explore-card" data-card-index="3">
-          <div class="cat-explore-img-wrap">
-            <img src="assets/images/products/chocolate-celebration-cake.png" alt="Gateau Cakes" class="cat-explore-img">
-            <div class="card-landing-ripple"></div>
-            <div class="card-drop-shadow"></div>
-          </div>
-          <h3 class="cat-explore-title">Celebration Cakes</h3>
-          <span class="cat-explore-sub">Layered Gelato Gateaux</span>
-        </div>
+        </a>
       </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       NEW SECTION: COMPLETE INTERACTIVE PRODUCT PORTFOLIO (dairyclassics.com)
+       ======================================================== -->
+  <section class="section-catalog-portfolio" id="catalog-showcase">
+    <div class="container">
+      <div class="art-section-head text-center">
+        <span class="art-kicker">ALL CREATIONS &bull; SINCE 1996</span>
+        <h2 class="art-title">Full Dairy Classic Portfolio</h2>
+        <p class="art-desc" style="max-width: 680px; margin: 10px auto 0;">
+          Select a category below to explore all handcrafted frozen delights from Uzbekistan's #1 ice cream maker.
+        </p>
+      </div>
+
+      <!-- Filter Tabs Navigation -->
+      <div class="catalog-filter-bar">
+        <button class="catalog-tab-btn active" data-filter="all">
+          <span>Γ£¿ All Products</span>
+        </button>
+        <button class="catalog-tab-btn" data-filter="cones">
+          <span>≡ƒìª Cones (7)</span>
+        </button>
+        <button class="catalog-tab-btn" data-filter="sticks">
+          <span>≡ƒì½ Sticks (10)</span>
+        </button>
+        <button class="catalog-tab-btn" data-filter="cups">
+          <span>≡ƒì¿ Cups (7)</span>
+        </button>
+        <button class="catalog-tab-btn" data-filter="biscuit">
+          <span>≡ƒì¬ Biscuit (4)</span>
+        </button>
+        <button class="catalog-tab-btn" data-filter="cassatta">
+          <span>≡ƒì░ Cassatta (3)</span>
+        </button>
+        <button class="catalog-tab-btn" data-filter="tubs">
+          <span>≡ƒìº Pints & Tubs (3)</span>
+        </button>
+      </div>
+
+      <!-- Dynamic Filterable Products Grid -->
+      <div class="catalog-grid" id="catalog-products-grid">
+                              <div class="catalog-card" data-category="cones">
+              <div class="catalog-card-badge">Berry Delight</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/twist-x.webp" alt="SUPER TWIST" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Cones &bull; 120 ml Waffle Cone</span>
+                <h3 class="catalog-card-title">SUPER TWIST</h3>
+                <p class="catalog-card-desc">Vanilla Ice cream centered Raspberry sauce filled in crunchy wafer coated chocolate, won the soul and taste bud of ice cream lover.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('SUPER TWIST', 'Cones', '120 ml Waffle Cone', 'assets/images/live/twist-x.webp', 'Vanilla Ice cream centered Raspberry sauce filled in crunchy wafer coated chocolate, won the soul and taste bud of ice cream lover.', 'Berry Delight')"
+                          aria-label="View Details for SUPER TWIST">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="cones">
+              <div class="catalog-card-badge">Choco Lover</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/boom-c.webp" alt="CHOCO BOOM" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Cones &bull; 120 ml Waffle Cone</span>
+                <h3 class="catalog-card-title">CHOCO BOOM</h3>
+                <p class="catalog-card-desc">Chocolate ice cream filled in crunchy wafer coated with chocolate along with crispy roasted peanuts that give distinctive taste to your mood pleasure.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('CHOCO BOOM', 'Cones', '120 ml Waffle Cone', 'assets/images/live/boom-c.webp', 'Chocolate ice cream filled in crunchy wafer coated with chocolate along with crispy roasted peanuts that give distinctive taste to your mood pleasure.', 'Choco Lover')"
+                          aria-label="View Details for CHOCO BOOM">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="cones">
+              <div class="catalog-card-badge">Iconic Classic</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/golden-f.webp" alt="GOLDEN FANTASY" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Cones &bull; 120 ml Waffle Cone</span>
+                <h3 class="catalog-card-title">GOLDEN FANTASY</h3>
+                <p class="catalog-card-desc">Split of two flavour vanilla and chocolate in crunchy wafer coated with chocolate along with roasted peanuts surpringly divine taste.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('GOLDEN FANTASY', 'Cones', '120 ml Waffle Cone', 'assets/images/live/golden-f.webp', 'Split of two flavour vanilla and chocolate in crunchy wafer coated with chocolate along with roasted peanuts surpringly divine taste.', 'Iconic Classic')"
+                          aria-label="View Details for GOLDEN FANTASY">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="cones">
+              <div class="catalog-card-badge">Super Gourmet</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/dice-s.webp" alt="DICE N SLICE" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Cones &bull; 120 ml Waffle Cone</span>
+                <h3 class="catalog-card-title">DICE N SLICE</h3>
+                <p class="catalog-card-desc">Seriously premium hazelnut and rose combination it is super gourmet filled in waffle cone.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('DICE N SLICE', 'Cones', '120 ml Waffle Cone', 'assets/images/live/dice-s.webp', 'Seriously premium hazelnut and rose combination it is super gourmet filled in waffle cone.', 'Super Gourmet')"
+                          aria-label="View Details for DICE N SLICE">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="cones">
+              <div class="catalog-card-badge">Double Savour</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/twin-c.webp" alt="TWIN CONE" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Cones &bull; 120 ml Waffle Cone</span>
+                <h3 class="catalog-card-title">TWIN CONE</h3>
+                <p class="catalog-card-desc">Premium ice cream twist with honey and Vanilla Pecan double savour in waffle cone.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('TWIN CONE', 'Cones', '120 ml Waffle Cone', 'assets/images/live/twin-c.webp', 'Premium ice cream twist with honey and Vanilla Pecan double savour in waffle cone.', 'Double Savour')"
+                          aria-label="View Details for TWIN CONE">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="cones">
+              <div class="catalog-card-badge">Tangy Orange</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/top-f.webp" alt="TOP FUN (BIG)" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Cones &bull; 140 ml Giant Cone</span>
+                <h3 class="catalog-card-title">TOP FUN (BIG)</h3>
+                <p class="catalog-card-desc">Premium ice cream in big wafer cone, filled with incredible fruity and tangy orange sauce.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('TOP FUN (BIG)', 'Cones', '140 ml Giant Cone', 'assets/images/live/top-f.webp', 'Premium ice cream in big wafer cone, filled with incredible fruity and tangy orange sauce.', 'Tangy Orange')"
+                          aria-label="View Details for TOP FUN (BIG)">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="cones">
+              <div class="catalog-card-badge">Rich Cappuccino</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/copico.webp" alt="CAPICON (BIG)" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Cones &bull; 140 ml Giant Cone</span>
+                <h3 class="catalog-card-title">CAPICON (BIG)</h3>
+                <p class="catalog-card-desc">Choose a real cappuccino ice cream in big cone and big fun.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('CAPICON (BIG)', 'Cones', '140 ml Giant Cone', 'assets/images/live/copico.webp', 'Choose a real cappuccino ice cream in big cone and big fun.', 'Rich Cappuccino')"
+                          aria-label="View Details for CAPICON (BIG)">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                                        <div class="catalog-card" data-category="sticks">
+              <div class="catalog-card-badge">Double Choco</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/super-choco.webp" alt="SUPER CHOC" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Sticks &bull; 90 ml Stick</span>
+                <h3 class="catalog-card-title">SUPER CHOC</h3>
+                <p class="catalog-card-desc">Delightful premium chocolate ice cream with smooth, creamy texture that pleasntly surprise you coated with crunchy rich chocolate along with pieces of crispier peanuts.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('SUPER CHOC', 'Sticks', '90 ml Stick', 'assets/images/live/super-choco.webp', 'Delightful premium chocolate ice cream with smooth, creamy texture that pleasntly surprise you coated with crunchy rich chocolate along with pieces of crispier peanuts.', 'Double Choco')"
+                          aria-label="View Details for SUPER CHOC">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="sticks">
+              <div class="catalog-card-badge">Popular Favorite</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/bera-n.webp" alt="VEGA" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Sticks &bull; 90 ml Stick</span>
+                <h3 class="catalog-card-title">VEGA</h3>
+                <p class="catalog-card-desc">Delicious Vanilla flavoured premium ice cream coated with luscious crunchy chocolate along with crispy roasted peanuts.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('VEGA', 'Sticks', '90 ml Stick', 'assets/images/live/bera-n.webp', 'Delicious Vanilla flavoured premium ice cream coated with luscious crunchy chocolate along with crispy roasted peanuts.', 'Popular Favorite')"
+                          aria-label="View Details for VEGA">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="sticks">
+              <div class="catalog-card-badge">Sensational Milky</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/bera-class.webp" alt="CLASSIC VEGA" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Sticks &bull; 90 ml Stick</span>
+                <h3 class="catalog-card-title">CLASSIC VEGA</h3>
+                <p class="catalog-card-desc">Smooth and truly delight sensational premium milky vanilla ice cream for your taste buds, coated with tempting silky chocolate.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('CLASSIC VEGA', 'Sticks', '90 ml Stick', 'assets/images/live/bera-class.webp', 'Smooth and truly delight sensational premium milky vanilla ice cream for your taste buds, coated with tempting silky chocolate.', 'Sensational Milky')"
+                          aria-label="View Details for CLASSIC VEGA">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="sticks">
+              <div class="catalog-card-badge">Half & Half</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/new-classic.webp" alt="NEW CLASSIC" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Sticks &bull; 90 ml Stick</span>
+                <h3 class="catalog-card-title">NEW CLASSIC</h3>
+                <p class="catalog-card-desc">Double satisfaction with half and half portion of smooth, creamy vanilla and chocolate ice cream coated with luscious rich chocolate.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('NEW CLASSIC', 'Sticks', '90 ml Stick', 'assets/images/live/new-classic.webp', 'Double satisfaction with half and half portion of smooth, creamy vanilla and chocolate ice cream coated with luscious rich chocolate.', 'Half & Half')"
+                          aria-label="View Details for NEW CLASSIC">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="sticks">
+              <div class="catalog-card-badge">Coffee & Cocoa</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/mokko.webp" alt="KOFFEE MOKKO" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Sticks &bull; 85 ml Stick</span>
+                <h3 class="catalog-card-title">KOFFEE MOKKO</h3>
+                <p class="catalog-card-desc">Discover the delectable coffee and cocoa combination it is enjoyable.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('KOFFEE MOKKO', 'Sticks', '85 ml Stick', 'assets/images/live/mokko.webp', 'Discover the delectable coffee and cocoa combination it is enjoyable.', 'Coffee & Cocoa')"
+                          aria-label="View Details for KOFFEE MOKKO">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="sticks">
+              <div class="catalog-card-badge">Triple Layer</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/delizia.webp" alt="DELIZIA" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Sticks &bull; 90 ml Stick</span>
+                <h3 class="catalog-card-title">DELIZIA</h3>
+                <p class="catalog-card-desc">Triple layer coated ice cream stick with inner and outer crispy chocolatey layer in between luscious mixberry goodness.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('DELIZIA', 'Sticks', '90 ml Stick', 'assets/images/live/delizia.webp', 'Triple layer coated ice cream stick with inner and outer crispy chocolatey layer in between luscious mixberry goodness.', 'Triple Layer')"
+                          aria-label="View Details for DELIZIA">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="sticks">
+              <div class="catalog-card-badge">Orange Tangy</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/royal-f.webp" alt="ROYAL FUN" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Sticks &bull; 90 ml Stick</span>
+                <h3 class="catalog-card-title">ROYAL FUN</h3>
+                <p class="catalog-card-desc">Triple layer coated ice cream stick, enjoy the perfect balance of orange tangy layer in between crispy chocolatey layer.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('ROYAL FUN', 'Sticks', '90 ml Stick', 'assets/images/live/royal-f.webp', 'Triple layer coated ice cream stick, enjoy the perfect balance of orange tangy layer in between crispy chocolatey layer.', 'Orange Tangy')"
+                          aria-label="View Details for ROYAL FUN">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="sticks">
+              <div class="catalog-card-badge">Mixberry Wave</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/pango-n.webp" alt="PANGO" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Sticks &bull; 85 ml Stick</span>
+                <h3 class="catalog-card-title">PANGO</h3>
+                <p class="catalog-card-desc">The ultimate indulgence that promises to contentment and pleasure of mixberry refreshment.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('PANGO', 'Sticks', '85 ml Stick', 'assets/images/live/pango-n.webp', 'The ultimate indulgence that promises to contentment and pleasure of mixberry refreshment.', 'Mixberry Wave')"
+                          aria-label="View Details for PANGO">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="sticks">
+              <div class="catalog-card-badge">Tropical Delight</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/frutonia.webp" alt="FRUTONIA" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Sticks &bull; 85 ml Stick</span>
+                <h3 class="catalog-card-title">FRUTONIA</h3>
+                <p class="catalog-card-desc">Tropical fruity delight the journey of creamy adventure and enjoyment.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('FRUTONIA', 'Sticks', '85 ml Stick', 'assets/images/live/frutonia.webp', 'Tropical fruity delight the journey of creamy adventure and enjoyment.', 'Tropical Delight')"
+                          aria-label="View Details for FRUTONIA">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="sticks">
+              <div class="catalog-card-badge">Fruity Treat</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/tapo.webp" alt="TAPO" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Sticks &bull; 80 ml Stick</span>
+                <h3 class="catalog-card-title">TAPO</h3>
+                <p class="catalog-card-desc">Refreshing fruity treat made for sunny afternoons and sweet smiles.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('TAPO', 'Sticks', '80 ml Stick', 'assets/images/live/tapo.webp', 'Refreshing fruity treat made for sunny afternoons and sweet smiles.', 'Fruity Treat')"
+                          aria-label="View Details for TAPO">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                                        <div class="catalog-card" data-category="cups">
+              <div class="catalog-card-badge">Blueberry Swirl</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/Layer-1.webp" alt="CREAMICA CHEESE CAKE" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Cups &bull; 100 ml Cup</span>
+                <h3 class="catalog-card-title">CREAMICA CHEESE CAKE</h3>
+                <p class="catalog-card-desc">Premium blueberry cheese cake ice cream with luscious blueberry sauce.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('CREAMICA CHEESE CAKE', 'Cups', '100 ml Cup', 'assets/images/live/Layer-1.webp', 'Premium blueberry cheese cake ice cream with luscious blueberry sauce.', 'Blueberry Swirl')"
+                          aria-label="View Details for CREAMICA CHEESE CAKE">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="cups">
+              <div class="catalog-card-badge">Chocolate & Peanut</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/Cremica-Vanilla.webp" alt="CREAMICA VANILLA" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Cups &bull; 100 ml Cup</span>
+                <h3 class="catalog-card-title">CREAMICA VANILLA</h3>
+                <p class="catalog-card-desc">Creamica is creamy selection filled in cups topped with chocolate along with roasted peanuts, pick up delectable frozen treat.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('CREAMICA VANILLA', 'Cups', '100 ml Cup', 'assets/images/live/Cremica-Vanilla.webp', 'Creamica is creamy selection filled in cups topped with chocolate along with roasted peanuts, pick up delectable frozen treat.', 'Chocolate & Peanut')"
+                          aria-label="View Details for CREAMICA VANILLA">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="cups">
+              <div class="catalog-card-badge">Biscuiti Eminent</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/Cremica-Biscuit.webp" alt="CREAMICA BISCUITI" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Cups &bull; 100 ml Cup</span>
+                <h3 class="catalog-card-title">CREAMICA BISCUITI</h3>
+                <p class="catalog-card-desc">Creamy Biscuiti flavoured delicious and eminent treat.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('CREAMICA BISCUITI', 'Cups', '100 ml Cup', 'assets/images/live/Cremica-Biscuit.webp', 'Creamy Biscuiti flavoured delicious and eminent treat.', 'Biscuiti Eminent')"
+                          aria-label="View Details for CREAMICA BISCUITI">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="cups">
+              <div class="catalog-card-badge">Papaya Cubes</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/AMBROZIYA.webp" alt="AMBROZIYA MINI CUP" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Cups &bull; 80 ml Mini Cup</span>
+                <h3 class="catalog-card-title">AMBROZIYA MINI CUP</h3>
+                <p class="catalog-card-desc">Premium ice cream with chunks of papaya cubes which bring additional value to it.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('AMBROZIYA MINI CUP', 'Cups', '80 ml Mini Cup', 'assets/images/live/AMBROZIYA.webp', 'Premium ice cream with chunks of papaya cubes which bring additional value to it.', 'Papaya Cubes')"
+                          aria-label="View Details for AMBROZIYA MINI CUP">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="cups">
+              <div class="catalog-card-badge">Tangy Orange</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/orange.webp" alt="ORANGE MINI CUP" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Cups &bull; 80 ml Mini Cup</span>
+                <h3 class="catalog-card-title">ORANGE MINI CUP</h3>
+                <p class="catalog-card-desc">Premium orange Ice cream with tangy orange sauce it is just simply rewarding.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('ORANGE MINI CUP', 'Cups', '80 ml Mini Cup', 'assets/images/live/orange.webp', 'Premium orange Ice cream with tangy orange sauce it is just simply rewarding.', 'Tangy Orange')"
+                          aria-label="View Details for ORANGE MINI CUP">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="cups">
+              <div class="catalog-card-badge">Choco Chips</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/choco.webp" alt="CHOCO CHIPS MINI CUP" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Cups &bull; 80 ml Mini Cup</span>
+                <h3 class="catalog-card-title">CHOCO CHIPS MINI CUP</h3>
+                <p class="catalog-card-desc">Velvety Vanilla Ice cream with creamy texture and chocolatey chips.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('CHOCO CHIPS MINI CUP', 'Cups', '80 ml Mini Cup', 'assets/images/live/choco.webp', 'Velvety Vanilla Ice cream with creamy texture and chocolatey chips.', 'Choco Chips')"
+                          aria-label="View Details for CHOCO CHIPS MINI CUP">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="cups">
+              <div class="catalog-card-badge">Rich Cappuccino</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/cappu.webp" alt="CAPPUCCINO MINI CUP" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Cups &bull; 80 ml Mini Cup</span>
+                <h3 class="catalog-card-title">CAPPUCCINO MINI CUP</h3>
+                <p class="catalog-card-desc">Perfectly created extra moment the richness of cappuccino.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('CAPPUCCINO MINI CUP', 'Cups', '80 ml Mini Cup', 'assets/images/live/cappu.webp', 'Perfectly created extra moment the richness of cappuccino.', 'Rich Cappuccino')"
+                          aria-label="View Details for CAPPUCCINO MINI CUP">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                                        <div class="catalog-card" data-category="biscuit">
+              <div class="catalog-card-badge">Dual Flavor</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/sandwich.webp" alt="SANDWICH" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Biscuit &bull; 100 ml Sandwich</span>
+                <h3 class="catalog-card-title">SANDWICH</h3>
+                <p class="catalog-card-desc">Vanilla and chocolate ice cream half sandwiched between crunchy biscuit and half dipped in chocolate with roasted peanuts, irresistible taste and delicious treat on go.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('SANDWICH', 'Biscuit', '100 ml Sandwich', 'assets/images/live/sandwich.webp', 'Vanilla and chocolate ice cream half sandwiched between crunchy biscuit and half dipped in chocolate with roasted peanuts, irresistible taste and delicious treat on go.', 'Dual Flavor')"
+                          aria-label="View Details for SANDWICH">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="biscuit">
+              <div class="catalog-card-badge">Classic Bricket</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/bricket.webp" alt="BRICKET" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Biscuit &bull; 110 ml Sandwich</span>
+                <h3 class="catalog-card-title">BRICKET</h3>
+                <p class="catalog-card-desc">Perfect treat on go with delicious amalgamation of vanilla and chocolate ice cream sandwiched between crunchy premium biscuit.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('BRICKET', 'Biscuit', '110 ml Sandwich', 'assets/images/live/bricket.webp', 'Perfect treat on go with delicious amalgamation of vanilla and chocolate ice cream sandwiched between crunchy premium biscuit.', 'Classic Bricket')"
+                          aria-label="View Details for BRICKET">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="biscuit">
+              <div class="catalog-card-badge">Round Cookie</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/olino.webp" alt="OLINO" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Biscuit &bull; 95 ml Sandwich</span>
+                <h3 class="catalog-card-title">OLINO</h3>
+                <p class="catalog-card-desc">Biscuiti flavoured ice cream perfectly round shape with premium cookies coated with chocolate.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('OLINO', 'Biscuit', '95 ml Sandwich', 'assets/images/live/olino.webp', 'Biscuiti flavoured ice cream perfectly round shape with premium cookies coated with chocolate.', 'Round Cookie')"
+                          aria-label="View Details for OLINO">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="biscuit">
+              <div class="catalog-card-badge">Pure Vanilla</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/round.webp" alt="ROUND PIE" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Biscuit &bull; 95 ml Sandwich</span>
+                <h3 class="catalog-card-title">ROUND PIE</h3>
+                <p class="catalog-card-desc">Imaginative creation perfectly round vanilla ice cream with premium cookies coated with chocolate.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('ROUND PIE', 'Biscuit', '95 ml Sandwich', 'assets/images/live/round.webp', 'Imaginative creation perfectly round vanilla ice cream with premium cookies coated with chocolate.', 'Pure Vanilla')"
+                          aria-label="View Details for ROUND PIE">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                                        <div class="catalog-card" data-category="cassatta">
+              <div class="catalog-card-badge">1 Litre Brick</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/Classic-Cassata.png" alt="CLASSIC CASSATTA (1 LTR)" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Cassatta &bull; 1000 ml Celebration Brick</span>
+                <h3 class="catalog-card-title">CLASSIC CASSATTA (1 LTR)</h3>
+                <p class="catalog-card-desc">Premium layered ice cream with different flavour combination topped with roasted peanuts, A slice of great fascination.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('CLASSIC CASSATTA (1 LTR)', 'Cassatta', '1000 ml Celebration Brick', 'assets/images/live/Classic-Cassata.png', 'Premium layered ice cream with different flavour combination topped with roasted peanuts, A slice of great fascination.', '1 Litre Brick')"
+                          aria-label="View Details for CLASSIC CASSATTA (1 LTR)">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="cassatta">
+              <div class="catalog-card-badge">Cookies & Cream</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/live/Cassata-Cookies-N-Icre-Cream.webp" alt="GALAXY CASSATTA (1 LTR)" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Cassatta &bull; 1000 ml Celebration Brick</span>
+                <h3 class="catalog-card-title">GALAXY CASSATTA (1 LTR)</h3>
+                <p class="catalog-card-desc">Premium layered Ice cream to celebrate anytime , anywhere topped with roasted peanuts, A slice of creamy satisfaction.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('GALAXY CASSATTA (1 LTR)', 'Cassatta', '1000 ml Celebration Brick', 'assets/images/live/Cassata-Cookies-N-Icre-Cream.webp', 'Premium layered Ice cream to celebrate anytime , anywhere topped with roasted peanuts, A slice of creamy satisfaction.', 'Cookies & Cream')"
+                          aria-label="View Details for GALAXY CASSATTA (1 LTR)">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="cassatta">
+              <div class="catalog-card-badge">Gateau Special</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/products/chocolate-celebration-cake.png" alt="TRIPLE-LAYER GATEAU CAKE" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Cassatta &bull; 1.0 kg Gateau Cake</span>
+                <h3 class="catalog-card-title">TRIPLE-LAYER GATEAU CAKE</h3>
+                <p class="catalog-card-desc">Architectural trio of Belgian dark chocolate, white vanilla cream, and milk chocolate sponge with dark ganache drip.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('TRIPLE-LAYER GATEAU CAKE', 'Cassatta', '1.0 kg Gateau Cake', 'assets/images/products/chocolate-celebration-cake.png', 'Architectural trio of Belgian dark chocolate, white vanilla cream, and milk chocolate sponge with dark ganache drip.', 'Gateau Special')"
+                          aria-label="View Details for TRIPLE-LAYER GATEAU CAKE">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                                        <div class="catalog-card" data-category="tubs">
+              <div class="catalog-card-badge">72% Dark Couverture</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/products/belgian-chocolate-tub.png" alt="Belgian Chocolate Truffle" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Tubs &bull; 500 ml Gourmet Pint</span>
+                <h3 class="catalog-card-title">Belgian Chocolate Truffle</h3>
+                <p class="catalog-card-desc">Rich 72% dark Belgian cocoa ribbons folded into velvet chocolate gelato, crowned with crisp hand-curled dark chocolate shavings.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('Belgian Chocolate Truffle', 'Tubs', '500 ml Gourmet Pint', 'assets/images/products/belgian-chocolate-tub.png', 'Rich 72% dark Belgian cocoa ribbons folded into velvet chocolate gelato, crowned with crisp hand-curled dark chocolate shavings.', '72% Dark Couverture')"
+                          aria-label="View Details for Belgian Chocolate Truffle">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="tubs">
+              <div class="catalog-card-badge">Madagascar Bourbon</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/products/french-vanilla-tub.png" alt="French Vanilla Royale" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Tubs &bull; 500 ml Gourmet Pint</span>
+                <h3 class="catalog-card-title">French Vanilla Royale</h3>
+                <p class="catalog-card-desc">Double-creamed farm milk steeped with aromatic Madagascar Bourbon vanilla pods and hand-scraped vanilla seeds.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('French Vanilla Royale', 'Tubs', '500 ml Gourmet Pint', 'assets/images/products/french-vanilla-tub.png', 'Double-creamed farm milk steeped with aromatic Madagascar Bourbon vanilla pods and hand-scraped vanilla seeds.', 'Madagascar Bourbon')"
+                          aria-label="View Details for French Vanilla Royale">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                      <div class="catalog-card" data-category="tubs">
+              <div class="catalog-card-badge">Garden Mint</div>
+              <div class="catalog-card-visual">
+                <img src="assets/images/products/mint-pistachio-tub.png" alt="Mint Pistachio Crunch" loading="lazy">
+                <div class="catalog-card-glow"></div>
+              </div>
+              <div class="catalog-card-body">
+                <span class="catalog-card-meta">Tubs &bull; 500 ml Gourmet Pint</span>
+                <h3 class="catalog-card-title">Mint Pistachio Crunch</h3>
+                <p class="catalog-card-desc">Fresh garden spearmint infused into double-creamed milk, folded with roasted California pistachios and dark chocolate chips.</p>
+                
+                <div class="catalog-card-foot">
+                  <span class="catalog-hallmark">100% Real Farm Milk</span>
+                  <button class="catalog-quickview-btn" 
+                          onclick="openCatalogItemQuickView('Mint Pistachio Crunch', 'Tubs', '500 ml Gourmet Pint', 'assets/images/products/mint-pistachio-tub.png', 'Fresh garden spearmint infused into double-creamed milk, folded with roasted California pistachios and dark chocolate chips.', 'Garden Mint')"
+                          aria-label="View Details for Mint Pistachio Crunch">
+                    <span>Details Γåù</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+                        </div>
     </div>
   </section>
 
@@ -589,11 +1345,157 @@
           </div>
 
           <div class="story-actions-row">
-            <a href="#video-craft" class="btn-story-white">
-              <span>Our story</span>
+            <a href="#about-heritage" class="btn-story-white">
+              <span>Our Full Story</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       NEW SECTION: ABOUT US & FOUNDER'S VISION & DEVELOPMENTS (dairyclassics.com)
+       ======================================================== -->
+  <section class="section-about-deep-heritage" id="about-heritage">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="art-section-head text-center">
+        <span class="art-kicker">A LEGACY OF EXCELLENCE SINCE 1996</span>
+        <h2 class="art-title">We at Foreign Company Singapore Samarkand</h2>
+        <p class="art-desc" style="max-width: 720px; margin: 10px auto 0;">
+          Under the brand Dairy Classic, we have been delighting taste buds for over 30 years with our core motto: <strong>"Healthy Living"</strong> from the very beginning!
+        </p>
+      </div>
+
+      <!-- Core Highlights Banner -->
+      <div class="about-pillars-banner">
+        <div class="about-pillar-card">
+          <div class="pillar-icon">≡ƒÄ»</div>
+          <h4>Our Motto</h4>
+          <p>"Healthy Living" from the very beginning!</p>
+        </div>
+        <div class="about-pillar-card">
+          <div class="pillar-icon">Γ¥ñ∩╕Å</div>
+          <h4>Our Drive</h4>
+          <p>Quality, passion, and the joy of ice cream.</p>
+        </div>
+        <div class="about-pillar-card">
+          <div class="pillar-icon">≡ƒîÅ</div>
+          <h4>Our Reach</h4>
+          <p>A leading ice cream brand, bringing happiness to millions.</p>
+        </div>
+      </div>
+
+      <!-- Founder's Vision Split Card -->
+      <div class="heritage-split-story-card">
+        <div class="heritage-img-column">
+          <img src="assets/images/live/founder.webp" alt="Dairy Classic Founder's Vision" loading="lazy">
+          <div class="heritage-img-caption">
+            <span>Founder &amp; President &bull; Dairy Classic</span>
+          </div>
+        </div>
+        <div class="heritage-text-column">
+          <span class="kicker-pink">LEADERSHIP &amp; PURPOSE</span>
+          <h3 class="heritage-story-title">FounderΓÇÖs Vision</h3>
+          <p class="heritage-story-lead">
+            Under the visionary leadership and expertise of our Founder & President, Dairy Classic has built a trusted reputation over the last three decades.
+          </p>
+          <div class="founder-points-list">
+            <div class="founder-point-item">
+              <div class="point-num">01</div>
+              <div>
+                <strong>Integrity & Quality</strong>
+                <p>We are known for premium, trustworthy products crafted from 100% natural ingredients.</p>
+              </div>
+            </div>
+            <div class="founder-point-item">
+              <div class="point-num">02</div>
+              <div>
+                <strong>Innovation & Growth</strong>
+                <p>Investing in cutting-edge European technology & high-precision manufacturing machinery.</p>
+              </div>
+            </div>
+            <div class="founder-point-item">
+              <div class="point-num">03</div>
+              <div>
+                <strong>Strong Presence</strong>
+                <p>Present in leading supermarkets, parlours, and convenience stores across Uzbekistan.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Developments Split Card -->
+      <div class="heritage-split-story-card reverse-layout">
+        <div class="heritage-img-column">
+          <img src="assets/images/live/developments.webp" alt="Dairy Classic Recent Developments Plant" loading="lazy">
+          <div class="capacity-stat-badge">
+            <span class="stat-number">80,000L</span>
+            <span class="stat-label">Daily Capacity</span>
+          </div>
+        </div>
+        <div class="heritage-text-column">
+          <span class="kicker-pink">MODERNIZATION &amp; GROWTH</span>
+          <h3 class="heritage-story-title">Recent Developments</h3>
+          <p class="heritage-story-lead">
+            Our 80,000-litre daily production capacity ensures we deliver nothing but the finest, most flavorful ice cream to our loyal customers across Uzbekistan and beyond.
+          </p>
+          <ul class="developments-bullets">
+            <li>
+              <span class="check-icon">Γ£ô</span>
+              <span><strong>Modernization of our ice cream plant</strong> with state-of-the-art European hygiene standards.</span>
+            </li>
+            <li>
+              <span class="check-icon">Γ£ô</span>
+              <span><strong>Advanced technology</strong> for world class, ultra-creamy, slow-churned production.</span>
+            </li>
+            <li>
+              <span class="check-icon">Γ£ô</span>
+              <span><strong>Awarded #1 choice</strong> by our passionate ice cream consumers across the nation.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Mission & Vision Dual Cards -->
+      <div class="mission-vision-grid">
+        <div class="mv-card mission-card">
+          <div class="mv-head">
+            <span class="mv-tag">OUR PURPOSE</span>
+            <h3 class="mv-title">Our Mission</h3>
+          </div>
+          <ul class="mv-list">
+            <li><span>≡ƒîƒ</span> Spreading the love for ice cream.</li>
+            <li><span>≡ƒì¿</span> Bringing joy with every scoop.</li>
+            <li><span>≡ƒî┐</span> Promoting healthy living through quality and innovation.</li>
+          </ul>
+        </div>
+
+        <div class="mv-card vision-card">
+          <div class="mv-head">
+            <span class="mv-tag">OUR AMBITION</span>
+            <h3 class="mv-title">Our Vision</h3>
+          </div>
+          <ul class="mv-list">
+            <li><span>≡ƒîì</span> Deliver world class flavors &amp; quality to our consumers.</li>
+            <li><span>ΓÜÖ∩╕Å</span> Use cutting edge manufacturing &amp; technology.</li>
+            <li><span>≡ƒñ¥</span> Create value for customers, employees &amp; society. Achieve sustainable growth across all markets.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Sweet Moments Distribution Banner -->
+      <div class="sweet-moments-banner">
+        <div class="smb-content">
+          <span class="smb-kicker">NATIONWIDE NETWORK</span>
+          <h3 class="smb-title">Bringing Sweet Moments Closer</h3>
+          <p class="smb-desc">Find us across Uzbekistan and beyond ΓÇö in leading stores, parlors, and cafes! Retail &amp; Wholesale Availability partnering with Top Food Chains.</p>
+        </div>
+        <div class="smb-action">
+          <a href="#contact-us" class="btn-smb-cta">Partner With Us Γåù</a>
         </div>
       </div>
     </div>
@@ -691,26 +1593,26 @@
             Crafted with passion, our ice creams bring pure delight in every bite. Made with the finest ingredients, we ensure a rich, creamy experience. From classic flavors to exciting twists, there's something for everyone. Taste the tradition, love the flavor!
           </p>
           <div class="heritage-actions-row">
-            <a href="#flavors" class="btn-heritage-primary">Explore Treats</a>
-            <a href="#about" class="btn-heritage-secondary">Our Story</a>
+            <a href="#catalog-showcase" class="btn-heritage-primary">Explore Treats</a>
+            <a href="#about-heritage" class="btn-heritage-secondary">Our Story</a>
           </div>
         </div>
 
         <div class="indulgence-img-collage">
           <div class="indulgence-collage-item">
-            <img src="assets/images/products/golden-fantasy.png" alt="Golden Fantasy Cone" loading="lazy">
+            <img src="assets/images/live/golden-f.webp" alt="Golden Fantasy Cone" loading="lazy">
             <span class="collage-item-name">Golden Fantasy</span>
           </div>
           <div class="indulgence-collage-item">
-            <img src="assets/images/products/round-pie.webp" alt="Round Pie" loading="lazy">
+            <img src="assets/images/live/round.webp" alt="Round Pie" loading="lazy">
             <span class="collage-item-name">Round Pie</span>
           </div>
           <div class="indulgence-collage-item">
-            <img src="assets/images/products/sandwich.webp" alt="Sandwich Biscuit" loading="lazy">
+            <img src="assets/images/live/sandwich.webp" alt="Sandwich Biscuit" loading="lazy">
             <span class="collage-item-name">Sandwich Biscuit</span>
           </div>
           <div class="indulgence-collage-item">
-            <img src="assets/images/products/vega-bar.png" alt="Vega Bar" loading="lazy">
+            <img src="assets/images/live/bera-n.webp" alt="Vega Bar" loading="lazy">
             <span class="collage-item-name">Vega Crunchy Bar</span>
           </div>
         </div>
@@ -731,7 +1633,7 @@
             Bringing smiles with every scoop, one indulgence at a time. From nostalgic classics to exciting new treats, we have it all. A world of flavor, crafted for pure happiness. Dive into delight today!
           </p>
           <div class="heritage-actions-row">
-            <a href="#about" class="btn-heritage-primary">About Us</a>
+            <a href="#about-heritage" class="btn-heritage-primary">About Us</a>
             <a href="#stores" class="btn-heritage-secondary">Find a Parlour</a>
           </div>
         </div>
@@ -788,6 +1690,212 @@
     </div>
   </section>
 
+  <!-- ========================================================
+       NEW SECTION: INTERACTIVE FAQS ACCORDION (dairyclassics.com/faqs/)
+       ======================================================== -->
+  <section class="section-faqs-accordion" id="faqs">
+    <div class="container">
+      <div class="art-section-head text-center">
+        <span class="art-kicker">FREQUENTLY ASKED QUESTIONS</span>
+        <h2 class="art-title">Want Some Answers?</h2>
+        <p class="art-desc" style="max-width: 600px; margin: 10px auto 0;">
+          Everything you need to know about our ice creams, production standards, and partnership opportunities.
+        </p>
+      </div>
+
+      <!-- FAQ Category Filter Tabs -->
+      <div class="faq-category-nav">
+                  <button class="faq-tab-btn active" data-faq-cat="general">
+            <span>≡ƒìª General Questions</span>
+          </button>
+                  <button class="faq-tab-btn " data-faq-cat="product">
+            <span>≡ƒÑ¢ Product & Ingredients</span>
+          </button>
+                  <button class="faq-tab-btn " data-faq-cat="partnership">
+            <span>≡ƒñ¥ Partnership & Distribution</span>
+          </button>
+              </div>
+
+      <!-- FAQ Accordions Container -->
+      <div class="faq-accordions-wrapper">
+                  <div class="faq-accordion-group active" id="faq-group-general">
+                          <div class="faq-item open">
+                <button class="faq-question-btn" aria-expanded="true">
+                  <span class="faq-q-text">What makes Dairy Classic ice cream special?</span>
+                  <span class="faq-icon-toggle">+</span>
+                </button>
+                <div class="faq-answer-pane">
+                  <p>We use 100% natural milk from trusted local farms, slow-churned in small batches with premium European ingredients since 1996. Our motto from the beginning has been "Healthy Living".</p>
+                </div>
+              </div>
+                          <div class="faq-item ">
+                <button class="faq-question-btn" aria-expanded="false">
+                  <span class="faq-q-text">Where are Dairy Classic ice creams manufactured?</span>
+                  <span class="faq-icon-toggle">+</span>
+                </button>
+                <div class="faq-answer-pane">
+                  <p>Our modern state-of-the-art facility is located at ╨æ╨ú╨ó 5, 65M6+H9 Tashkent, Uzbekistan, boasting an 80,000-litre daily production capacity with high European standards.</p>
+                </div>
+              </div>
+                          <div class="faq-item ">
+                <button class="faq-question-btn" aria-expanded="false">
+                  <span class="faq-q-text">Are Dairy Classic ice cream products vegetarian-friendly?</span>
+                  <span class="faq-icon-toggle">+</span>
+                </button>
+                <div class="faq-answer-pane">
+                  <p>Yes, all our ice creams, cones, bars, cups, biscuits, and cassattas are 100% vegetarian-friendly and crafted without any animal gelatin.</p>
+                </div>
+              </div>
+                      </div>
+                  <div class="faq-accordion-group " id="faq-group-product">
+                          <div class="faq-item ">
+                <button class="faq-question-btn" aria-expanded="false">
+                  <span class="faq-q-text">How should Dairy Classic ice cream be stored at home?</span>
+                  <span class="faq-icon-toggle">+</span>
+                </button>
+                <div class="faq-answer-pane">
+                  <p>For optimal velvety texture and freshness, store at -18┬░C or below. For gourmet tubs, let them rest at room temperature for 2-3 minutes before scooping for maximum creaminess.</p>
+                </div>
+              </div>
+                          <div class="faq-item ">
+                <button class="faq-question-btn" aria-expanded="false">
+                  <span class="faq-q-text">What are your signature best-selling products?</span>
+                  <span class="faq-icon-toggle">+</span>
+                </button>
+                <div class="faq-answer-pane">
+                  <p>Our most beloved creations include Golden Fantasy cone, Super Twist Raspberry cone, Vega Crunchy bar, Sandwich Biscuit, Creamica Cheese Cake, and Classic 1-Litre Cassatta.</p>
+                </div>
+              </div>
+                          <div class="faq-item ">
+                <button class="faq-question-btn" aria-expanded="false">
+                  <span class="faq-q-text">Do your products contain real fruits and nuts?</span>
+                  <span class="faq-icon-toggle">+</span>
+                </button>
+                <div class="faq-answer-pane">
+                  <p>Absolutely! We use real California almonds, golden roasted peanuts, pure papaya cubes in Ambroziya, real raspberry sauces, and authentic cocoa couverture.</p>
+                </div>
+              </div>
+                      </div>
+                  <div class="faq-accordion-group " id="faq-group-partnership">
+                          <div class="faq-item ">
+                <button class="faq-question-btn" aria-expanded="false">
+                  <span class="faq-q-text">How can I become a retail partner or distributor?</span>
+                  <span class="faq-icon-toggle">+</span>
+                </button>
+                <div class="faq-answer-pane">
+                  <p>We partner with supermarkets, cafes, and food chains across Uzbekistan and internationally. You can reach our wholesale team at +998 90 998 2019 (Tashkent) or +998 90 502 9292 (Samarkand), or submit the contact form below.</p>
+                </div>
+              </div>
+                          <div class="faq-item ">
+                <button class="faq-question-btn" aria-expanded="false">
+                  <span class="faq-q-text">Do you provide bulk orders for weddings and events?</span>
+                  <span class="faq-icon-toggle">+</span>
+                </button>
+                <div class="faq-answer-pane">
+                  <p>Yes! We supply custom celebration Cassattas, layered Gateau cakes, mini cups, and refrigerated ice cream carts for private events, corporate gatherings, and weddings.</p>
+                </div>
+              </div>
+                      </div>
+              </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       NEW SECTION: INSTAGRAM SOCIAL SHOWCASE (@dairyclassic.uz)
+       ======================================================== -->
+  <section class="section-instagram-showcase" id="instagram-feed">
+    <div class="container">
+      <div class="art-section-head text-center">
+        <span class="art-kicker">FOLLOW OUR SWEET MOMENTS</span>
+        <h2 class="art-title">@dairyclassic.uz on Instagram</h2>
+        <p class="art-desc" style="max-width: 600px; margin: 10px auto 0;">
+          Tag your delicious moments with <strong>#DairyClassic</strong> for a chance to be featured on our official channel.
+        </p>
+      </div>
+
+      <div class="insta-gallery-grid">
+                  <a href="https://www.instagram.com/dairyclassic.uz/" target="_blank" rel="noopener noreferrer" class="insta-card">
+            <div class="insta-img-wrap">
+              <img src="assets/images/live/485038988_9670411909687914_5815841654752973913_n.jpg" alt="Dairy Classic Instagram Moment" loading="lazy">
+              <div class="insta-overlay">
+                <span class="insta-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </span>
+                <span class="insta-likes">Γ¥ñ∩╕Å 1.4k</span>
+              </div>
+            </div>
+            <p class="insta-caption">Pure creamy happiness in every Golden Fantasy bite Γ£¿ #DairyClassic #Uzbekistan</p>
+          </a>
+                  <a href="https://www.instagram.com/dairyclassic.uz/" target="_blank" rel="noopener noreferrer" class="insta-card">
+            <div class="insta-img-wrap">
+              <img src="assets/images/live/485171700_18497555821004628_2375668312933697309_n.jpg" alt="Dairy Classic Instagram Moment" loading="lazy">
+              <div class="insta-overlay">
+                <span class="insta-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </span>
+                <span class="insta-likes">Γ¥ñ∩╕Å 2.1k</span>
+              </div>
+            </div>
+            <p class="insta-caption">Vega Bar loaded with crispy roasted peanuts &amp; rich chocolate coating ≡ƒÑ£≡ƒì½</p>
+          </a>
+                  <a href="https://www.instagram.com/dairyclassic.uz/" target="_blank" rel="noopener noreferrer" class="insta-card">
+            <div class="insta-img-wrap">
+              <img src="assets/images/live/486483028_1109892090950006_7006204567457217081_n.jpg" alt="Dairy Classic Instagram Moment" loading="lazy">
+              <div class="insta-overlay">
+                <span class="insta-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </span>
+                <span class="insta-likes">Γ¥ñ∩╕Å 1.8k</span>
+              </div>
+            </div>
+            <p class="insta-caption">Creamica Cheese Cake ΓÇô rich blueberry indulgence in a cup ≡ƒ½É≡ƒì¿</p>
+          </a>
+                  <a href="https://www.instagram.com/dairyclassic.uz/" target="_blank" rel="noopener noreferrer" class="insta-card">
+            <div class="insta-img-wrap">
+              <img src="assets/images/live/Sweet.jpg" alt="Dairy Classic Instagram Moment" loading="lazy">
+              <div class="insta-overlay">
+                <span class="insta-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </span>
+                <span class="insta-likes">Γ¥ñ∩╕Å 3.2k</span>
+              </div>
+            </div>
+            <p class="insta-caption">Bringing sweet moments closer across Uzbekistan since 1996 ≡ƒç║≡ƒç┐Γ¥ñ∩╕Å</p>
+          </a>
+                  <a href="https://www.instagram.com/dairyclassic.uz/" target="_blank" rel="noopener noreferrer" class="insta-card">
+            <div class="insta-img-wrap">
+              <img src="assets/images/live/chocol.jpg" alt="Dairy Classic Instagram Moment" loading="lazy">
+              <div class="insta-overlay">
+                <span class="insta-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </span>
+                <span class="insta-likes">Γ¥ñ∩╕Å 2.5k</span>
+              </div>
+            </div>
+            <p class="insta-caption">Rich Belgian chocolate ribbons and real slow-churned farm milk ≡ƒì½≡ƒÑ¢</p>
+          </a>
+                  <a href="https://www.instagram.com/dairyclassic.uz/" target="_blank" rel="noopener noreferrer" class="insta-card">
+            <div class="insta-img-wrap">
+              <img src="assets/images/live/choco4.webp" alt="Dairy Classic Instagram Moment" loading="lazy">
+              <div class="insta-overlay">
+                <span class="insta-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </span>
+                <span class="insta-likes">Γ¥ñ∩╕Å 1.9k</span>
+              </div>
+            </div>
+            <p class="insta-caption">Sandwich biscuits &amp; crunchy wafer cones ready for the weekend celebration! ≡ƒÄë</p>
+          </a>
+              </div>
+
+      <div class="text-center" style="margin-top: 36px;">
+        <a href="https://www.instagram.com/dairyclassic.uz/" target="_blank" rel="noopener noreferrer" class="btn-insta-follow">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <span>Follow @dairyclassic.uz</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- ========================================================
        SECTION 10: GOT A CRAVING OR A QUESTION? (Live Website Section)
@@ -798,10 +1906,141 @@
         <h2>Got a Craving or a Question?</h2>
         <p>Have a question or looking for something special? WeΓÇÖd love to hear from you! Reach out and letΓÇÖs make every moment delicious.</p>
         <div class="craving-cta-actions">
-          <a href="#stores" class="btn-cta-contact">Contact Us</a>
+          <a href="#contact-us" class="btn-cta-contact">Contact Us</a>
           <a href="tel:+998781203377" class="btn-cta-phone">
             <span>≡ƒô₧ +99878 120 33 77</span>
           </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       NEW SECTION: COMPLETE CONTACT FORM & FACTORY LOCATION MAP
+       ======================================================== -->
+  <section class="section-contact-full" id="contact-us">
+    <div class="container">
+      <div class="art-section-head text-center">
+        <span class="art-kicker">DISCOVER &amp; CONNECT</span>
+        <h2 class="art-title">Talk to Us! LetΓÇÖs Discuss</h2>
+        <p class="art-desc" style="max-width: 650px; margin: 10px auto 0;">
+          Discover the magic behind every scoop. WeΓÇÖre here to share our story, values, and passion for crafting ice cream that brings people together.
+        </p>
+      </div>
+
+      <div class="contact-full-grid">
+        <!-- Interactive Contact / Inquiry Form -->
+        <div class="contact-form-card">
+          <div class="form-card-head">
+            <h3>Send an Inquiry</h3>
+            <p>Thank you for getting in touch! Kindly fill the form, have a great day!</p>
+          </div>
+
+          <form id="live-contact-form" onsubmit="handleContactSubmit(event)">
+            <div class="form-row-2col">
+              <div class="form-field">
+                <label for="c-name">Full Name *</label>
+                <input type="text" id="c-name" name="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-field">
+                <label for="c-email">Email Address *</label>
+                <input type="email" id="c-email" name="email" placeholder="name@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-row-2col">
+              <div class="form-field">
+                <label for="c-country">Country Code</label>
+                <select id="c-country" name="country">
+                  <option value="+998" selected>+998 (Uzbekistan)</option>
+                  <option value="+91">+91 (India)</option>
+                  <option value="+971">+971 (Dubai / UAE)</option>
+                  <option value="+44">+44 (UK)</option>
+                  <option value="+1">+1 (US / Canada)</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="c-phone">Phone Number *</label>
+                <input type="tel" id="c-phone" name="phone" placeholder="90 998 2019" required>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="c-interest">Interested In</label>
+              <select id="c-interest" name="interest">
+                <option value="Cones">Cones (Golden Fantasy, Choco Boom, Super Twist)</option>
+                <option value="Sticks">Sticks &amp; Bars (Vega, Super Choc, Delizia)</option>
+                <option value="Cups">Cups &amp; Creamica (Cheese Cake, Vanilla, Ambroziya)</option>
+                <option value="Biscuit">Biscuit &amp; Sandwiches (Bricket, Olino, Round Pie)</option>
+                <option value="Cassatta">Cassatta (Classic 1 LTR, Galaxy)</option>
+                <option value="Tubs">Gourmet 500ml Pints &amp; Tubs</option>
+                <option value="Wholesale">Wholesale &amp; Retail Distribution</option>
+                <option value="General">General Inquiry &amp; Feedback</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="c-message">Your Message *</label>
+              <textarea id="c-message" name="message" rows="4" placeholder="Tell us how we can make your sweet moments special..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-form-submit" id="btn-submit-inquiry">
+              <span>Send Message</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+
+            <div class="form-toast-msg" id="form-toast-msg" style="display: none;">
+              <span>≡ƒÄë Thank you! Your message has been sent successfully. Our team will contact you shortly.</span>
+            </div>
+          </form>
+        </div>
+
+        <!-- Contact Cards & Map -->
+        <div class="contact-info-map-card">
+          <div class="contact-quick-cards">
+            <div class="cq-item">
+              <span class="cq-icon">≡ƒôì</span>
+              <div>
+                <strong>Visit Factory &amp; HQ</strong>
+                <p>╨æ╨ú╨ó 5, 65M6+H9 Tashkent, Uzbekistan. Factory location.</p>
+              </div>
+            </div>
+            <div class="cq-item">
+              <span class="cq-icon">≡ƒô₧</span>
+              <div>
+                <strong>Call Us Directly</strong>
+                <p>+99878 120 33 77 / 78 &bull; +998 90 992 2999</p>
+              </div>
+            </div>
+            <div class="cq-item">
+              <span class="cq-icon">≡ƒô▒</span>
+              <div>
+                <strong>Regional Support</strong>
+                <p>Tashkent: +998 90 998 2019<br>Samarkand: +998 90 502 9292</p>
+              </div>
+            </div>
+            <div class="cq-item">
+              <span class="cq-icon">Γ£ë∩╕Å</span>
+              <div>
+                <strong>Email Us</strong>
+                <p><a href="mailto:support@dairyclassic.uz">support@dairyclassic.uz</a> &bull; <a href="mailto:jkapoor@me.com">jkapoor@me.com</a></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Google Maps Embed for Factory Location in Tashkent -->
+          <div class="map-embed-wrapper">
+            <iframe 
+              title="Dairy Classic Factory Location Tashkent"
+              src="https://maps.google.com/maps?q=41.2995,69.2401&hl=en&z=14&output=embed" 
+              width="100%" 
+              height="240" 
+              style="border:0; border-radius: 16px;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
         </div>
       </div>
     </div>
@@ -850,7 +2089,7 @@
               </div>
                           <div class="art-store-item" data-city="Samarkand">
                 <div class="store-top">
-                  <strong>Samarkand City Parlour</strong>
+                  <strong>Samarkand Regional Office & Parlour</strong>
                   <span class="store-pill">Regional Destination</span>
                 </div>
                 <p class="store-addr">Registan Boulevard, Samarkand, Uzbekistan</p>

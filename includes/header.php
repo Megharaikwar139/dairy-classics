@@ -6,7 +6,7 @@ $current_design = isset($design) ? $design : 1;
 <!-- Header Navigation Bar -->
 <header class="site-header <?= $current_design == 2 ? 'header-luxury' : 'header-playful' ?>" id="site-header">
   <div class="container header-inner">
-    <!-- Brand Logo (User's Official Dairy Classic Logo) -->
+    <!-- Brand Logo (Official Dairy Classic Logo) -->
     <a href="<?= $current_design == 2 ? 'design2.php' : 'index.php' ?>" class="brand-logo" aria-label="Dairy Classic Home">
       <div class="brand-logo-badge">
         <img src="assets/images/dairy-classic-logo.jpg" alt="Dairy Classic Since 1996" class="brand-logo-img">
@@ -20,10 +20,10 @@ $current_design = isset($design) ? $design : 1;
     <!-- Exact Navigation from dairyclassics.com -->
     <nav class="main-nav" aria-label="Main Navigation">
       <ul class="nav-links">
-        <li><a href="#flavors" class="nav-link">Cones</a></li>
-        <li><a href="#flavors" class="nav-link">Sticks</a></li>
-        <li><a href="#categories" class="nav-link">Cups</a></li>
-        <li><a href="#categories" class="nav-link">Biscuit</a></li>
+        <li><a href="#catalog-showcase" class="nav-link" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('cones')">Cones</a></li>
+        <li><a href="#catalog-showcase" class="nav-link" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('sticks')">Sticks</a></li>
+        <li><a href="#catalog-showcase" class="nav-link" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('cups')">Cups</a></li>
+        <li><a href="#catalog-showcase" class="nav-link" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('biscuit')">Biscuit</a></li>
         
         <!-- Others Dropdown (Exact match to dairyclassics.com) -->
         <li class="nav-item-dropdown">
@@ -32,11 +32,11 @@ $current_design = isset($design) ? $design : 1;
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
           </a>
           <ul class="nav-dropdown-menu">
-            <li><a href="#categories">Cassatta</a></li>
+            <li><a href="#catalog-showcase" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('cassatta')">Cassatta</a></li>
             <li><a href="#spin360">Tubs</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#craving-cta">FAQs</a></li>
-            <li><a href="#stores">Contact Us</a></li>
+            <li><a href="#about-heritage">About Us</a></li>
+            <li><a href="#faqs">FAQs</a></li>
+            <li><a href="#contact-us">Contact Us</a></li>
           </ul>
         </li>
       </ul>
@@ -62,7 +62,7 @@ $current_design = isset($design) ? $design : 1;
         </a>
       </div>
 
-      <a href="#flavors" class="btn-header-cta <?= $current_design == 2 ? 'btn-cta-gold' : 'btn-cta-pastel' ?>">
+      <a href="#catalog-showcase" class="btn-header-cta <?= $current_design == 2 ? 'btn-cta-gold' : 'btn-cta-pastel' ?>">
         <span>Explore Treats</span>
       </a>
     </div>
