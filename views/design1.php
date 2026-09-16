@@ -26,7 +26,7 @@
       <!-- Minimal Headline & Copy -->
       <div class="art-hero-text">
         <div class="art-badge-pill">
-          <span class="pill-spark">🍨</span>
+          <span class="pill-spark">✦</span>
           <span>100% SINGLE-FARM JERSEY MILK</span>
         </div>
 
@@ -52,9 +52,9 @@
         </div>
 
         <div class="art-tags-row" id="art-tags-row">
-          <span class="art-tag">🍦 Bourbon Vanilla</span>
-          <span class="art-tag">🥛 16% Butterfat</span>
-          <span class="art-tag">🌿 Zero Artificial Gums</span>
+          <span class="art-tag">✦ Bourbon Vanilla</span>
+          <span class="art-tag">✦ 16% Butterfat</span>
+          <span class="art-tag">✦ Zero Artificial Gums</span>
         </div>
       </div>
 
@@ -369,25 +369,25 @@
       <!-- Filter Tabs Navigation -->
       <div class="catalog-filter-bar">
         <button class="catalog-tab-btn active" data-filter="all">
-          <span>✨ All Products</span>
+          <span>All Products</span>
         </button>
         <button class="catalog-tab-btn" data-filter="cones">
-          <span>🍦 Cones (7)</span>
+          <span>Cones (7)</span>
         </button>
         <button class="catalog-tab-btn" data-filter="sticks">
-          <span>🍫 Sticks (10)</span>
+          <span>Sticks (10)</span>
         </button>
         <button class="catalog-tab-btn" data-filter="cups">
-          <span>🍨 Cups (7)</span>
+          <span>Cups (7)</span>
         </button>
         <button class="catalog-tab-btn" data-filter="biscuit">
-          <span>🍪 Biscuit (4)</span>
+          <span>Biscuit (4)</span>
         </button>
         <button class="catalog-tab-btn" data-filter="cassatta">
-          <span>🍰 Cassatta (3)</span>
+          <span>Cassatta (3)</span>
         </button>
         <button class="catalog-tab-btn" data-filter="tubs">
-          <span>🍧 Pints & Tubs (3)</span>
+          <span>Pints &amp; Tubs (3)</span>
         </button>
       </div>
 
@@ -432,7 +432,9 @@
         <div class="story-delicious-visual">
           <img src="assets/images/story-chocolate-churn.jpg" alt="Good things take time. Great ice cream does too." loading="lazy">
           <div class="story-floating-badge">
-            <span class="story-badge-icon">🥛</span>
+            <span class="story-badge-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8E1C3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l2 5v13a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7l2-5z"/><line x1="6" y1="12" x2="18" y2="12"/></svg>
+            </span>
             <div>
               <strong class="story-badge-title">Farm-fresh milk</strong>
               <span class="story-badge-sub">Churned within 24 hours</span>
@@ -450,14 +452,18 @@
 
           <div class="story-features-grid">
             <div class="story-feature-item">
-              <span class="story-feature-icon">🍃</span>
+              <span class="story-feature-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C59B4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+              </span>
               <div>
                 <h4 class="story-feature-title">Thoughtfully sourced</h4>
                 <p class="story-feature-desc">Better ingredients, naturally.</p>
               </div>
             </div>
             <div class="story-feature-item">
-              <span class="story-feature-icon">✨</span>
+              <span class="story-feature-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="#C59B4B"><path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z"/></svg>
+              </span>
               <div>
                 <h4 class="story-feature-title">Slow churned</h4>
                 <p class="story-feature-desc">For that velvet finish.</p>
@@ -493,17 +499,23 @@
       <!-- Core Highlights Banner -->
       <div class="about-pillars-banner">
         <div class="about-pillar-card">
-          <div class="pillar-icon">🎯</div>
+          <div class="pillar-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#8E1C3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
           <h4>Our Motto</h4>
           <p>"Healthy Living" from the very beginning!</p>
         </div>
         <div class="about-pillar-card">
-          <div class="pillar-icon">❤️</div>
+          <div class="pillar-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="#8E1C3D"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </div>
           <h4>Our Drive</h4>
           <p>Quality, passion, and the joy of ice cream.</p>
         </div>
         <div class="about-pillar-card">
-          <div class="pillar-icon">🌏</div>
+          <div class="pillar-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#8E1C3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
           <h4>Our Reach</h4>
           <p>A leading ice cream brand, bringing happiness to millions.</p>
         </div>
@@ -519,23 +531,23 @@
         </div>
         <div class="heritage-text-column">
           <span class="kicker-pink">LEADERSHIP &amp; PURPOSE</span>
-          <h3 class="heritage-story-title">Founder’s Vision</h3>
+          <h3 class="heritage-story-title">Founder's Vision</h3>
           <p class="heritage-story-lead">
-            Under the visionary leadership and expertise of our Founder & President, Dairy Classic has built a trusted reputation over the last three decades.
+            Under the visionary leadership and expertise of our Founder &amp; President, Dairy Classic has built a trusted reputation over the last three decades.
           </p>
           <div class="founder-points-list">
             <div class="founder-point-item">
               <div class="point-num">01</div>
               <div>
-                <strong>Integrity & Quality</strong>
+                <strong>Integrity &amp; Quality</strong>
                 <p>We are known for premium, trustworthy products crafted from 100% natural ingredients.</p>
               </div>
             </div>
             <div class="founder-point-item">
               <div class="point-num">02</div>
               <div>
-                <strong>Innovation & Growth</strong>
-                <p>Investing in cutting-edge European technology & high-precision manufacturing machinery.</p>
+                <strong>Innovation &amp; Growth</strong>
+                <p>Investing in cutting-edge European technology &amp; high-precision manufacturing machinery.</p>
               </div>
             </div>
             <div class="founder-point-item">
@@ -589,9 +601,9 @@
             <h3 class="mv-title">Our Mission</h3>
           </div>
           <ul class="mv-list">
-            <li><span>🌟</span> Spreading the love for ice cream.</li>
-            <li><span>🍨</span> Bringing joy with every scoop.</li>
-            <li><span>🌿</span> Promoting healthy living through quality and innovation.</li>
+            <li><span class="mv-ico">✦</span> Spreading the love for ice cream.</li>
+            <li><span class="mv-ico">✦</span> Bringing joy with every scoop.</li>
+            <li><span class="mv-ico">✦</span> Promoting healthy living through quality and innovation.</li>
           </ul>
         </div>
 
@@ -601,9 +613,9 @@
             <h3 class="mv-title">Our Vision</h3>
           </div>
           <ul class="mv-list">
-            <li><span>🌍</span> Deliver world class flavors &amp; quality to our consumers.</li>
-            <li><span>⚙️</span> Use cutting edge manufacturing &amp; technology.</li>
-            <li><span>🤝</span> Create value for customers, employees &amp; society. Achieve sustainable growth across all markets.</li>
+            <li><span class="mv-ico">✦</span> Deliver world class flavors &amp; quality to our consumers.</li>
+            <li><span class="mv-ico">✦</span> Use cutting edge manufacturing &amp; technology.</li>
+            <li><span class="mv-ico">✦</span> Create value for customers, employees &amp; society. Achieve sustainable growth across all markets.</li>
           </ul>
         </div>
       </div>
@@ -828,7 +840,7 @@
       <div class="faq-category-nav">
         <?php $fIndex = 0; foreach ($faqs_data as $catKey => $cat): ?>
           <button class="faq-tab-btn <?= $fIndex === 0 ? 'active' : '' ?>" data-faq-cat="<?= $catKey ?>">
-            <span><?= $cat['icon'] ?> <?= $cat['category'] ?></span>
+            <span><?= $cat['category'] ?></span>
           </button>
         <?php $fIndex++; endforeach; ?>
       </div>
@@ -876,7 +888,10 @@
                 <span class="insta-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                 </span>
-                <span class="insta-likes">❤️ <?= $post['likes'] ?></span>
+                <span class="insta-likes">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#FFF" style="vertical-align: -2px; margin-right: 4px;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  <?= $post['likes'] ?>
+                </span>
               </div>
             </div>
             <p class="insta-caption"><?= htmlspecialchars($post['caption']) ?></p>
@@ -900,11 +915,12 @@
     <div class="container">
       <div class="craving-cta-box">
         <h2>Got a Craving or a Question?</h2>
-        <p>Have a question or looking for something special? We’d love to hear from you! Reach out and let’s make every moment delicious.</p>
+        <p>Have a question or looking for something special? We'd love to hear from you! Reach out and let's make every moment delicious.</p>
         <div class="craving-cta-actions">
           <a href="#contact-us" class="btn-cta-contact">Contact Us</a>
           <a href="tel:+998781203377" class="btn-cta-phone">
-            <span>📞 +99878 120 33 77</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 6px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+99878 120 33 77</span>
           </a>
         </div>
       </div>
@@ -995,28 +1011,36 @@
         <div class="contact-info-map-card">
           <div class="contact-quick-cards">
             <div class="cq-item">
-              <span class="cq-icon">📍</span>
+              <span class="cq-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8E1C3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
               <div>
                 <strong>Visit Factory &amp; HQ</strong>
                 <p>БУТ 5, 65M6+H9 Tashkent, Uzbekistan. Factory location.</p>
               </div>
             </div>
             <div class="cq-item">
-              <span class="cq-icon">📞</span>
+              <span class="cq-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8E1C3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
               <div>
                 <strong>Call Us Directly</strong>
                 <p>+99878 120 33 77 / 78 &bull; +998 90 992 2999</p>
               </div>
             </div>
             <div class="cq-item">
-              <span class="cq-icon">📱</span>
+              <span class="cq-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8E1C3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              </span>
               <div>
                 <strong>Regional Support</strong>
                 <p>Tashkent: +998 90 998 2019<br>Samarkand: +998 90 502 9292</p>
               </div>
             </div>
             <div class="cq-item">
-              <span class="cq-icon">✉️</span>
+              <span class="cq-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8E1C3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
               <div>
                 <strong>Email Us</strong>
                 <p><a href="mailto:support@dairyclassic.uz">support@dairyclassic.uz</a> &bull; <a href="mailto:jkapoor@me.com">jkapoor@me.com</a></p>
