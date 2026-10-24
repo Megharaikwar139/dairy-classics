@@ -222,8 +222,8 @@ $is_subpage = true;
             Even if your specialized skillset isn't listed among our active openings today, our 80,000L facility is always expanding. Tell us about your superpower and how you want to craft happiness with Dairy Classic.
           </p>
           <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px;">
-            <a href="https://wa.me/998909982019" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; background: rgba(37, 211, 102, 0.2); border: 1px solid rgba(37, 211, 102, 0.5); color: #FFF; padding: 6px 14px; border-radius: 99px; font-size: 0.82rem; font-weight: 700;">
-              <span>💬 WhatsApp: +998 90 998 2019</span>
+            <a href="https://wa.me/971504748836" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; background: rgba(37, 211, 102, 0.2); border: 1px solid rgba(37, 211, 102, 0.5); color: #FFF; padding: 6px 14px; border-radius: 99px; font-size: 0.82rem; font-weight: 700;">
+              <span>💬 WhatsApp: +971 50 474 8836</span>
             </a>
             <a href="https://t.me/DC_Dairy" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; background: rgba(62, 153, 216, 0.2); border: 1px solid rgba(62, 153, 216, 0.5); color: #FFF; padding: 6px 14px; border-radius: 99px; font-size: 0.82rem; font-weight: 700;">
               <span>✈️ Telegram: @DC_Dairy</span>

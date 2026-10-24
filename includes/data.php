@@ -12,6 +12,9 @@ $brand = [
     'phone_tashkent' => '+998 90 998 2019',
     'phone_samarkand' => '+998 90 502 9292',
     'phone_office' => '+998 90 992 2999',
+    'whatsapp' => '+971 50 474 8836',
+    'whatsapp_raw' => '971504748836',
+    'telegram' => 'DC_Dairy',
     'address' => 'БУТ 5, 65M6+H9 Tashkent, Uzbekistan. Factory Location',
     'hours' => 'Mon - Sat : 09:00 am - 08:00 pm | Sun : Closed',
     'email' => 'support@dairyclassic.uz',
@@ -1059,7 +1062,7 @@ $career_faqs = [
     ],
     [
         'q' => 'Can I submit a spontaneous application if my dream role is not listed?',
-        'a' => 'Absolutely! We are continuously expanding our 80,000-litre capacity and developing new product lines. Submit your CV through the Open Application modal, message us on WhatsApp (+998 90 998 2019), or email support@dairyclassic.uz / jkapoor@me.com with your background and goals.'
+        'a' => 'Absolutely! We are continuously expanding our 80,000-litre capacity and developing new product lines. Submit your CV through the Open Application modal, message us on WhatsApp (+971 50 474 8836), or email support@dairyclassic.uz / jkapoor@me.com with your background and goals.'
     ],
     [
         'q' => 'What languages are required to work at Dairy Classic?',
