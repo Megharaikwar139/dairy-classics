@@ -1,0 +1,72 @@
+# ========================================================
+# DAIRY CLASSIC - ENTERPRISE SECURITY & HARDENING RULES
+# Anti-Malware, Anti-Injection & Access Protection
+# ========================================================
+
+# 1. Disable Directory Browsing (Prevents file discovery)
+Options -Indexes -ExecCGI
+
+# 2. Disable Server Signature
+ServerSignature Off
+
+# 3. Enable Rewrite Engine for Security Inspection
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Block direct HTTP access to internal PHP directories
+    RewriteRule ^(includes|views|storage|config)(\/|$) - [F,L,NC]
+
+    # Block access to hidden files and version control directories (.git, .github, .env, etc.)
+    RewriteRule (^|/)\.(?!well-known/) - [F,L,NC]
+
+    # Block Directory Traversal (Path Traversal Attacks)
+    RewriteCond %{QUERY_STRING} (\.\./|\.\.\\) [NC,OR]
+    RewriteCond %{REQUEST_URI} (\.\./|\.\.\\) [NC]
+    RewriteRule .* - [F,L]
+
+    # Block Remote File Inclusion (RFI) & Local File Inclusion (LFI)
+    RewriteCond %{QUERY_STRING} (https?|ftp|php|data): [NC,OR]
+    RewriteCond %{QUERY_STRING} (proc/self/environ|etc/passwd|boot\.ini) [NC,OR]
+    RewriteCond %{QUERY_STRING} (=/|=%2F) [NC]
+    RewriteRule .* - [F,L]
+
+    # Block Code Injection & Web-Shell Execution Attempts
+    RewriteCond %{QUERY_STRING} (base64_encode|base64_decode|eval\(|gzinflate|passthru|shell_exec|system\() [NC,OR]
+    RewriteCond %{QUERY_STRING} (GLOBALS|_REQUEST|_ENV|_SERVER|_SESSION|_COOKIE|_POST|_GET) [NC,OR]
+    RewriteCond %{QUERY_STRING} (<|%3C)([^s]*s)+cript.*(>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} (union.*select|insert.*into|drop.*table|update.*set) [NC]
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# 4. Protect Sensitive File Extensions
+<FilesMatch "(^\..*|\.(bak|config|sql|fla|psd|ini|log|sh|inc|swp|dist|env|md|yml|yaml|json))$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# 5. Security Response Headers
+<IfModule mod_headers.c>
+    # Prevent MIME Sniffing attacks
+    Header set X-Content-Type-Options "nosniff"
+
+    # Prevent Clickjacking via iframes
+    Header set X-Frame-Options "SAMEORIGIN"
+
+    # Enable XSS Filter in supported browsers
+    Header set X-XSS-Protection "1; mode=block"
+
+    # Control Referrer Information
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Restrict risky browser features
+    Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# 6. Character Set Default
+AddDefaultCharset UTF-8
