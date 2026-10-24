@@ -277,18 +277,27 @@
               </div>
 
               <!-- Centered Product Visual -->
-              <div class="card-tub-popout">
+              <a href="product.php?id=<?= urlencode($id) ?>" class="card-tub-popout" aria-label="View details for <?= htmlspecialchars($p['name']) ?>">
                 <img src="<?= $p['image'] ?>" alt="<?= $p['name'] ?>" loading="eager" decoding="async">
-              </div>
+              </a>
 
               <!-- Origin / Category Kicker -->
               <span class="card-meta-origin"><?= $p['origin_kicker'] ?? ($p['category'] . ' • ' . $p['size']) ?></span>
 
               <!-- Elegant Serif Title -->
-              <h3 class="card-pop-title"><?= $p['name'] ?></h3>
+              <h3 class="card-pop-title">
+                <a href="product.php?id=<?= urlencode($id) ?>" style="color: inherit; text-decoration: none;"><?= $p['name'] ?></a>
+              </h3>
 
               <!-- Description Section (Replaces the price section) -->
               <p class="card-pop-desc"><?= htmlspecialchars($p['description']) ?></p>
+
+              <!-- Quick Link Button -->
+              <div style="margin-top: 14px;">
+                <a href="product.php?id=<?= urlencode($id) ?>" class="catalog-quickview-btn" style="text-decoration: none; display: inline-flex;">
+                  <span>Details ↗</span>
+                </a>
+              </div>
             </div>
           <?php 
           $card_idx++;
@@ -424,22 +433,24 @@
           <?php foreach ($catData['items'] as $item): ?>
             <div class="catalog-card" data-category="<?= $catKey ?>">
               <div class="catalog-card-badge"><?= $item['badge'] ?></div>
-              <div class="catalog-card-visual">
+              <a href="product.php?id=<?= urlencode($item['id']) ?>" class="catalog-card-visual" aria-label="View details for <?= htmlspecialchars($item['name']) ?>">
                 <img src="<?= $item['image'] ?>" alt="<?= $item['name'] ?>" loading="lazy">
                 <div class="catalog-card-glow"></div>
-              </div>
+              </a>
               <div class="catalog-card-body">
                 <span class="catalog-card-meta"><?= $catData['category_name'] ?> &bull; <?= $item['size'] ?></span>
-                <h3 class="catalog-card-title"><?= $item['name'] ?></h3>
+                <h3 class="catalog-card-title">
+                  <a href="product.php?id=<?= urlencode($item['id']) ?>"><?= $item['name'] ?></a>
+                </h3>
                 <p class="catalog-card-desc"><?= htmlspecialchars($item['description']) ?></p>
                 
                 <div class="catalog-card-foot">
                   <span class="catalog-hallmark">100% Real Farm Milk</span>
-                  <button class="catalog-quickview-btn" 
-                          onclick="openCatalogItemQuickView('<?= addslashes($item['name']) ?>', '<?= addslashes($catData['category_name']) ?>', '<?= addslashes($item['size']) ?>', '<?= addslashes($item['image']) ?>', '<?= addslashes($item['description']) ?>', '<?= addslashes($item['badge']) ?>')"
-                          aria-label="View Details for <?= $item['name'] ?>">
+                  <a href="product.php?id=<?= urlencode($item['id']) ?>" 
+                     class="catalog-quickview-btn" 
+                     aria-label="View Details for <?= htmlspecialchars($item['name']) ?>">
                     <span>Details ↗</span>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>

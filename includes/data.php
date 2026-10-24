@@ -538,6 +538,146 @@ $catalog_by_category = [
     ]
 ];
 
+// Automatically ensure every catalog item has a unique, deterministic 'id'
+foreach ($catalog_by_category as $catKey => &$catData) {
+    foreach ($catData['items'] as &$cItem) {
+        if (!isset($cItem['id']) || empty($cItem['id'])) {
+            $slug = strtolower($cItem['name']);
+            $slug = str_replace(['(', ')', '&', '.', "'", '"'], '', $slug);
+            $slug = preg_replace('/[^a-z0-9]+/i', '-', $slug);
+            $cItem['id'] = trim($slug, '-');
+        }
+        $cItem['category_key'] = $catKey;
+    }
+}
+unset($catData, $cItem);
+
+/**
+ * Generate sensory tasting notes based on product flavor keywords.
+ */
+function generateTastingNotes(string $name, string $category, string $badge): array {
+    $notes = [];
+    $upper = strtoupper($name . ' ' . $badge . ' ' . $category);
+
+    if (strpos($upper, 'CHOC') !== false || strpos($upper, 'BOOM') !== false || strpos($upper, 'MOKKO') !== false || strpos($upper, 'TRUFFLE') !== false) {
+        $notes = ['Belgian Dark Cocoa Shell', 'Slow-Roasted Peanuts Crunch', 'Silky Chocolate Truffle Core'];
+    } elseif (strpos($upper, 'BERRY') !== false || strpos($upper, 'TWIST') !== false || strpos($upper, 'PANGO') !== false || strpos($upper, 'STRAWBERRY') !== false) {
+        $notes = ['Velvety Sweet Farm Vanilla', 'Tangy Raspberry Puree Swirl', 'Crispy Golden Wafer'];
+    } elseif (strpos($upper, 'ORANGE') !== false || strpos($upper, 'FRUT') !== false || strpos($upper, 'TAPO') !== false) {
+        $notes = ['Sun-Ripened Citrus Essence', 'Fresh Fruit Puree Core', 'Crispy Chilled Sorbet Finish'];
+    } elseif (strpos($upper, 'COFFEE') !== false || strpos($upper, 'CAPPU') !== false) {
+        $notes = ['Italian Roasted Arabica', 'Frothy Farm Milk Foam', 'Subtle Caramelized Sugar Drizzle'];
+    } elseif (strpos($upper, 'CHEESE') !== false || strpos($upper, 'BISCUIT') !== false || strpos($upper, 'BRICKET') !== false || strpos($upper, 'SANDWICH') !== false || strpos($upper, 'PIE') !== false) {
+        $notes = ['Golden Oven-Baked Biscuit', 'Decadent Cream Cheese Swirl', '100% Whole Farm Milk Velvet'];
+    } elseif (strpos($upper, 'PISTACHIO') !== false || strpos($upper, 'ALMOND') !== false || strpos($upper, 'PECAN') !== false || strpos($upper, 'HAZELNUT') !== false) {
+        $notes = ['California Roasted Nuts', 'Aromatic Garden Spearmint', 'Crunchy Cocoa Nibs'];
+    } else {
+        $notes = ['Double-Cream Farm Jersey Milk', 'Madagascar Bourbon Vanilla Pods', 'Crispy Waffle & Enrobed Chocolate'];
+    }
+
+    return $notes;
+}
+
+/**
+ * Returns unified dictionary of all products across categories and hero lines.
+ */
+function getAllProducts(): array {
+    global $catalog_by_category, $products;
+    static $cachedAll = null;
+    if ($cachedAll !== null) {
+        return $cachedAll;
+    }
+
+    $all = [];
+
+    // 1. Process catalog items
+    foreach ($catalog_by_category as $catKey => $catData) {
+        foreach ($catData['items'] as $item) {
+            $id = $item['id'];
+            $all[$id] = [
+                'id' => $id,
+                'name' => $item['name'],
+                'category' => $catData['category_name'],
+                'category_key' => $catKey,
+                'size' => $item['size'],
+                'image' => $item['image'],
+                'description' => $item['description'],
+                'badge' => $item['badge'] ?? 'Artisanal Craft',
+                'rating' => 4.9,
+                'reviews_count' => rand(1200, 3400),
+                'calories' => $item['calories'] ?? (rand(215, 275) . ' kcal'),
+                'fat' => $item['fat'] ?? (rand(12, 16) . 'g'),
+                'sugar' => $item['sugar'] ?? (rand(17, 22) . 'g'),
+                'protein' => $item['protein'] ?? (rand(4, 6) . '.' . rand(2, 7) . 'g'),
+                'tasting_notes' => $item['tasting_notes'] ?? generateTastingNotes($item['name'], $catKey, $item['badge'] ?? ''),
+                'storage' => 'Sub-Zero -18°C or colder',
+                'shelf_life' => '12 Months from production date',
+                'origin' => 'Foreign Company Singapore Samarkand • Tashkent Plant',
+                'highlights' => [
+                    '100% Single-Farm Cow Milk',
+                    'European Standard Automated Freezers',
+                    'Zero Artificial Preservatives',
+                    'UzStandard & Halal-Compliant Hygiene'
+                ]
+            ];
+        }
+    }
+
+    // 2. Also register featured pint lineup
+    if (!empty($products)) {
+        foreach ($products as $id => $p) {
+            if (!isset($all[$id])) {
+                $all[$id] = [
+                    'id' => $id,
+                    'name' => $p['name'],
+                    'category' => $p['category'] ?? 'Gourmet Pint',
+                    'category_key' => 'tubs',
+                    'size' => $p['size'],
+                    'image' => $p['image'],
+                    'description' => $p['description'],
+                    'badge' => $p['badge'] ?? 'SIGNATURE RESERVE',
+                    'rating' => $p['rating'] ?? 4.95,
+                    'reviews_count' => $p['reviews_count'] ?? 2400,
+                    'calories' => $p['calories'] ?? '260 kcal',
+                    'fat' => $p['fat'] ?? '15g',
+                    'sugar' => $p['sugar'] ?? '19g',
+                    'protein' => $p['protein'] ?? '5.4g',
+                    'tasting_notes' => $p['tasting_notes'] ?? generateTastingNotes($p['name'], 'tubs', $p['badge'] ?? ''),
+                    'storage' => 'Sub-Zero -18°C or colder',
+                    'shelf_life' => '12 Months from production date',
+                    'origin' => 'Foreign Company Singapore Samarkand • Tashkent Plant',
+                    'highlights' => [
+                        '100% Single-Farm Cow Milk',
+                        'European Standard Automated Freezers',
+                        'Zero Artificial Preservatives',
+                        'UzStandard & Halal-Compliant Hygiene'
+                    ]
+                ];
+            }
+        }
+    }
+
+    $cachedAll = $all;
+    return $all;
+}
+
+/**
+ * Fetch a single product by unique ID or loose slug.
+ */
+function getProductById(string $id): ?array {
+    $all = getAllProducts();
+    if (isset($all[$id])) {
+        return $all[$id];
+    }
+    $cleanId = trim(strtolower($id));
+    foreach ($all as $k => $item) {
+        if (strtolower($k) === $cleanId || strtolower($item['name']) === $cleanId) {
+            return $item;
+        }
+    }
+    return null;
+}
+
 // About Us / Heritage Data from dairyclassics.com
 $about_heritage = [
     'legacy' => [
