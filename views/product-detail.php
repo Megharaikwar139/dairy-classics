@@ -1,16 +1,28 @@
 <?php
-// views/product-detail.php - Dedicated Product Showcase Detail Page
+// views/product-detail.php - Dedicated Product Showcase Detail Page (PHP 8.4+ Fully Compatible)
 $current_page = 'product';
 $is_subpage = true;
 $home_url = 'index.html';
+
+$product = (is_array($product ?? null)) ? $product : [];
+$pName = (string)($product['name'] ?? 'Artisanal Ice Cream');
+$pDesc = (string)($product['description'] ?? '');
+$pCat = (string)($product['category'] ?? 'Artisanal Treat');
+$pCatKey = (string)($product['category_key'] ?? 'treats');
+$pSize = (string)($product['size'] ?? 'Standard');
+$pBadge = (string)($product['badge'] ?? 'Artisanal Craft');
+$pImage = (string)($product['image'] ?? 'assets/images/dairy-classic-logo.jpg');
+$pReviews = (int)($product['reviews_count'] ?? 1500);
+$pNotes = (array)($product['tasting_notes'] ?? []);
+$safeRelated = (is_iterable($relatedProducts ?? null)) ? $relatedProducts : [];
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?= htmlspecialchars($product['name']) ?> | Dairy Classic Artisanal Ice Cream</title>
-  <meta name="description" content="<?= htmlspecialchars(substr($product['description'], 0, 155)) ?>. Crafted by Dairy Classic (Since 1996).">
+  <title><?= htmlspecialchars($pName, ENT_QUOTES, 'UTF-8') ?> | Dairy Classic Artisanal Ice Cream</title>
+  <meta name="description" content="<?= htmlspecialchars(substr($pDesc, 0, 155), ENT_QUOTES, 'UTF-8') ?>. Crafted by Dairy Classic (Since 1996).">
   
   <link rel="stylesheet" href="assets/css/shared.css">
   <link rel="stylesheet" href="assets/css/design1.css">
@@ -29,9 +41,9 @@ $home_url = 'index.html';
         <span class="sep">/</span>
         <a href="index.html#catalog-showcase">Treats</a>
         <span class="sep">/</span>
-        <a href="index.html#catalog-showcase" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('<?= $product['category_key'] ?>')"><?= htmlspecialchars($product['category']) ?></a>
+        <a href="index.html#catalog-showcase" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('<?= htmlspecialchars($pCatKey, ENT_QUOTES, 'UTF-8') ?>')"><?= htmlspecialchars($pCat, ENT_QUOTES, 'UTF-8') ?></a>
         <span class="sep">/</span>
-        <span class="current"><?= htmlspecialchars($product['name']) ?></span>
+        <span class="current"><?= htmlspecialchars($pName, ENT_QUOTES, 'UTF-8') ?></span>
       </nav>
 
       <a href="index.html#catalog-showcase" class="btn-back-treats" aria-label="Back to all treats">
@@ -48,12 +60,12 @@ $home_url = 'index.html';
       <div class="prod-visual-col">
         <div class="prod-pedestal-card">
           <div class="prod-badge-corner">
-            <span><?= htmlspecialchars($product['badge']) ?></span>
+            <span><?= htmlspecialchars($pBadge, ENT_QUOTES, 'UTF-8') ?></span>
           </div>
 
           <div class="prod-image-wrapper">
-            <img src="<?= htmlspecialchars($product['image']) ?>" 
-                 alt="<?= htmlspecialchars($product['name']) ?>" 
+            <img src="<?= htmlspecialchars($pImage, ENT_QUOTES, 'UTF-8') ?>" 
+                 alt="<?= htmlspecialchars($pName, ENT_QUOTES, 'UTF-8') ?>" 
                  class="prod-hero-img"
                  loading="eager"
                  decoding="async">
@@ -70,33 +82,35 @@ $home_url = 'index.html';
       <!-- Right Column: Information & Actions -->
       <div class="prod-info-col">
         <div class="prod-meta-strip">
-          <span class="prod-cat-pill"><?= htmlspecialchars($product['category']) ?></span>
-          <span class="prod-size-pill"><?= htmlspecialchars($product['size']) ?></span>
+          <span class="prod-cat-pill"><?= htmlspecialchars($pCat, ENT_QUOTES, 'UTF-8') ?></span>
+          <span class="prod-size-pill"><?= htmlspecialchars($pSize, ENT_QUOTES, 'UTF-8') ?></span>
           <span class="prod-since-pill">Since 1996</span>
         </div>
 
-        <h1 class="prod-title"><?= htmlspecialchars($product['name']) ?></h1>
+        <h1 class="prod-title"><?= htmlspecialchars($pName, ENT_QUOTES, 'UTF-8') ?></h1>
 
         <div class="prod-rating-strip">
           <div class="stars-cluster">★★★★★</div>
           <span class="rating-score">4.9 / 5.0</span>
-          <span class="rating-count">(<?= number_format($product['reviews_count']) ?> reviews across Uzbekistan)</span>
+          <span class="rating-count">(<?= number_format($pReviews) ?> reviews across Uzbekistan)</span>
         </div>
 
-        <p class="prod-lead-desc"><?= htmlspecialchars($product['description']) ?></p>
+        <p class="prod-lead-desc"><?= htmlspecialchars($pDesc, ENT_QUOTES, 'UTF-8') ?></p>
 
         <!-- Tasting Notes Section -->
+        <?php if (!empty($pNotes)): ?>
         <div class="prod-section-block">
           <h3 class="prod-subheading">Flavor Profile &amp; Tasting Notes</h3>
           <div class="tasting-chips-row">
-            <?php foreach ($product['tasting_notes'] as $note): ?>
+            <?php foreach ($pNotes as $note): ?>
               <span class="tasting-chip">
                 <span class="chip-sparkle">✦</span>
-                <span><?= htmlspecialchars($note) ?></span>
+                <span><?= htmlspecialchars((string)$note, ENT_QUOTES, 'UTF-8') ?></span>
               </span>
             <?php endforeach; ?>
           </div>
         </div>
+        <?php endif; ?>
 
         <!-- Purchase & Retail Inquiries CTAs -->
         <div class="prod-actions-wrap">
@@ -122,7 +136,7 @@ $home_url = 'index.html';
           <span class="retail-kicker">NATIONWIDE AVAILABILITY</span>
           <h2 class="retail-title">Available in 1,200+ Freezers Across Uzbekistan</h2>
           <p class="retail-desc">
-            Find <?= htmlspecialchars($product['name']) ?> freshly restocked daily in all leading supermarket chains, neighborhood convenience stores, and regional depots in Tashkent, Samarkand, and Bukhara.
+            Find <?= htmlspecialchars($pName, ENT_QUOTES, 'UTF-8') ?> freshly restocked daily in all leading supermarket chains, neighborhood convenience stores, and regional depots in Tashkent, Samarkand, and Bukhara.
           </p>
           <div class="supermarket-badges-row">
             <span class="supermarket-pill">🛒 Korzinka</span>
@@ -148,7 +162,7 @@ $home_url = 'index.html';
   </section>
 
   <!-- Related Treats Section -->
-  <?php if (!empty($relatedProducts)): ?>
+  <?php if (!empty($safeRelated)): ?>
     <section class="section-related-treats">
       <div class="container">
         <div class="related-head-row">
@@ -163,20 +177,29 @@ $home_url = 'index.html';
         </div>
 
         <div class="related-products-grid">
-          <?php foreach ($relatedProducts as $rel): ?>
+          <?php foreach ($safeRelated as $rel): ?>
+            <?php
+              $rId = (string)($rel['id'] ?? '');
+              $rName = (string)($rel['name'] ?? 'Treat');
+              $rBadge = (string)($rel['badge'] ?? 'Artisanal');
+              $rImage = (string)($rel['image'] ?? '');
+              $rCat = (string)($rel['category'] ?? '');
+              $rSize = (string)($rel['size'] ?? '');
+              $rDesc = (string)($rel['description'] ?? '');
+            ?>
             <div class="rel-product-card">
-              <div class="rel-badge"><?= htmlspecialchars($rel['badge']) ?></div>
-              <a href="product.php?id=<?= urlencode($rel['id']) ?>" class="rel-visual-box" aria-label="<?= htmlspecialchars($rel['name']) ?>">
-                <img src="<?= htmlspecialchars($rel['image']) ?>" alt="<?= htmlspecialchars($rel['name']) ?>" loading="lazy">
+              <div class="rel-badge"><?= htmlspecialchars($rBadge, ENT_QUOTES, 'UTF-8') ?></div>
+              <a href="product.php?id=<?= urlencode($rId) ?>" class="rel-visual-box" aria-label="<?= htmlspecialchars($rName, ENT_QUOTES, 'UTF-8') ?>">
+                <img src="<?= htmlspecialchars($rImage, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($rName, ENT_QUOTES, 'UTF-8') ?>" loading="lazy">
               </a>
               <div class="rel-info-box">
-                <span class="rel-meta"><?= htmlspecialchars($rel['category']) ?> &bull; <?= htmlspecialchars($rel['size']) ?></span>
+                <span class="rel-meta"><?= htmlspecialchars($rCat, ENT_QUOTES, 'UTF-8') ?> &bull; <?= htmlspecialchars($rSize, ENT_QUOTES, 'UTF-8') ?></span>
                 <h3 class="rel-name">
-                  <a href="product.php?id=<?= urlencode($rel['id']) ?>"><?= htmlspecialchars($rel['name']) ?></a>
+                  <a href="product.php?id=<?= urlencode($rId) ?>"><?= htmlspecialchars($rName, ENT_QUOTES, 'UTF-8') ?></a>
                 </h3>
-                <p class="rel-desc"><?= htmlspecialchars(substr($rel['description'], 0, 95)) ?>...</p>
+                <p class="rel-desc"><?= htmlspecialchars(substr($rDesc, 0, 95), ENT_QUOTES, 'UTF-8') ?>...</p>
                 <div class="rel-foot">
-                  <a href="product.php?id=<?= urlencode($rel['id']) ?>" class="btn-rel-details">
+                  <a href="product.php?id=<?= urlencode($rId) ?>" class="btn-rel-details">
                     <span>Explore Treat</span>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                   </a>
@@ -194,3 +217,4 @@ $home_url = 'index.html';
 
 </body>
 </html>
+

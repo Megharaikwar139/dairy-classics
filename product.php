@@ -2,12 +2,12 @@
 // product.php - Dedicated Product Showcase Detail Page
 require_once __DIR__ . '/includes/data.php';
 
-$productId = isset($_GET['id']) ? trim($_GET['id']) : 'super-twist';
+$productId = (isset($_GET['id']) && is_string($_GET['id'])) ? trim($_GET['id']) : 'super-twist';
 $product = getProductById($productId);
 
 if (!$product) {
     $all = getAllProducts();
-    $product = reset($all);
+    $product = reset($all) ?: null;
 }
 
 $design = 1;
@@ -18,29 +18,35 @@ $is_subpage = true;
 $allProducts = getAllProducts();
 $relatedProducts = [];
 
-foreach ($allProducts as $pId => $p) {
-    if ($pId === $product['id']) continue;
-    if ($p['category_key'] === $product['category_key']) {
-        $relatedProducts[] = $p;
-    }
-    if (count($relatedProducts) >= 4) break;
-}
+if ($product && !empty($product['id'])) {
+    $currentId = (string)$product['id'];
+    $currentCatKey = (string)($product['category_key'] ?? '');
 
-if (count($relatedProducts) < 4) {
     foreach ($allProducts as $pId => $p) {
-        if ($pId === $product['id']) continue;
-        $alreadyIn = false;
-        foreach ($relatedProducts as $rp) {
-            if ($rp['id'] === $pId) {
-                $alreadyIn = true;
-                break;
-            }
-        }
-        if (!$alreadyIn) {
+        if ((string)$pId === $currentId) continue;
+        if (isset($p['category_key']) && (string)$p['category_key'] === $currentCatKey) {
             $relatedProducts[] = $p;
-            if (count($relatedProducts) >= 4) break;
+        }
+        if (count($relatedProducts) >= 4) break;
+    }
+
+    if (count($relatedProducts) < 4) {
+        foreach ($allProducts as $pId => $p) {
+            if ((string)$pId === $currentId) continue;
+            $alreadyIn = false;
+            foreach ($relatedProducts as $rp) {
+                if (isset($rp['id']) && (string)$rp['id'] === (string)$pId) {
+                    $alreadyIn = true;
+                    break;
+                }
+            }
+            if (!$alreadyIn) {
+                $relatedProducts[] = $p;
+                if (count($relatedProducts) >= 4) break;
+            }
         }
     }
 }
 
 include __DIR__ . '/views/product-detail.php';
+
