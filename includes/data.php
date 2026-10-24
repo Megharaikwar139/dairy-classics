@@ -582,6 +582,30 @@ function generateTastingNotes(string $name, string $category, string $badge): ar
 }
 
 /**
+ * Generate rich story content for an ice cream if custom content is not provided.
+ */
+function generateIceCreamStory(string $name, string $category, string $description): array {
+    $p1 = "Crafted with passion at our modern European-standard facility in Tashkent, {$name} celebrates Dairy Classic's 30-year legacy of ice cream artistry. We start with 100% natural, single-farm cow's milk delivered fresh daily, gently slow-churned in small batches to create an ultra-smooth, velvety consistency that melts luxuriously on the tongue.";
+    
+    $upper = strtoupper($name . ' ' . $category);
+    if (strpos($upper, 'CHOC') !== false || strpos($upper, 'BOOM') !== false || strpos($upper, 'TRUFFLE') !== false) {
+        $p2 = "At the heart of {$name} lies our signature cocoa profile — rich Belgian dark chocolate folded into creamy dairy ribbons, enveloped in a satisfyingly crisp outer shell crowned with golden roasted peanuts. Every bite offers a harmonious contrast between deep roasted cocoa notes and silky cream sweetness.";
+    } elseif (strpos($upper, 'BERRY') !== false || strpos($upper, 'TWIST') !== false || strpos($upper, 'FRUT') !== false || strpos($upper, 'ORANGE') !== false || strpos($upper, 'PANGO') !== false) {
+        $p2 = "Blended with sun-drenched real fruit purees and fragrant berry swirls, this treat delivers a bright, refreshing burst that perfectly balances creamy dairy warmth. The natural fruit ribbons are woven throughout, guaranteeing vibrant flavor in every single bite.";
+    } elseif (strpos($upper, 'BISCUIT') !== false || strpos($upper, 'BRICKET') !== false || strpos($upper, 'SANDWICH') !== false || strpos($upper, 'PIE') !== false) {
+        $p2 = "Nestled between two golden, slow-baked artisanal wafers, the thick ice cream core slowly softens to match the delicate crunch of the biscuits. It's a beloved family classic that has delighted sweet moments across Uzbekistan for over three decades.";
+    } elseif (strpos($upper, 'COFFEE') !== false || strpos($upper, 'CAPPU') !== false || strpos($upper, 'MOKKO') !== false) {
+        $p2 = "Infused with slow-brewed Italian Arabica extracts and enriched with frothy whole farm milk, it delivers the deep aromatic notes of a freshly pulled espresso bar treat, accented with caramelized sugar crystals.";
+    } else {
+        $p2 = "Thoughtfully perfected with premium natural ingredients, pure butterfat, and zero artificial preservatives, {$description} It represents our founding promise of 'Healthy Living' without compromising on pure dessert indulgence.";
+    }
+
+    $p3 = "Safeguarded by our unbroken -18°C sub-zero cold chain from the churning lines in Tashkent straight to local supermarkets across Samarkand, Bukhara, and beyond, {$name} reaches you in peak artisanal freshness.";
+
+    return [$p1, $p2, $p3];
+}
+
+/**
  * Returns unified dictionary of all products across categories and hero lines.
  */
 function getAllProducts(): array {
@@ -597,6 +621,10 @@ function getAllProducts(): array {
     foreach ($catalog_by_category as $catKey => $catData) {
         foreach ($catData['items'] as $item) {
             $id = $item['id'];
+            $storyParagraphs = !empty($item['story_paragraphs']) 
+                ? (array)$item['story_paragraphs'] 
+                : (!empty($item['story']) ? [(string)$item['story']] : generateIceCreamStory($item['name'], $catData['category_name'], $item['description']));
+
             $all[$id] = [
                 'id' => $id,
                 'name' => $item['name'],
@@ -613,6 +641,10 @@ function getAllProducts(): array {
                 'sugar' => $item['sugar'] ?? (rand(17, 22) . 'g'),
                 'protein' => $item['protein'] ?? (rand(4, 6) . '.' . rand(2, 7) . 'g'),
                 'tasting_notes' => $item['tasting_notes'] ?? generateTastingNotes($item['name'], $catKey, $item['badge'] ?? ''),
+                'story' => $item['story'] ?? implode("\n\n", $storyParagraphs),
+                'story_paragraphs' => $storyParagraphs,
+                'story_subtitle' => $item['story_subtitle'] ?? 'Artisanal Craftsmanship & Heritage Flavor Experience',
+                'story_quote' => $item['story_quote'] ?? 'Crafted with 100% single-farm fresh dairy and slow-churned for an unforgettable velvety taste.',
                 'storage' => 'Sub-Zero -18°C or colder',
                 'shelf_life' => '12 Months from production date',
                 'origin' => 'Foreign Company Singapore Samarkand • Tashkent Plant',
@@ -630,6 +662,10 @@ function getAllProducts(): array {
     if (!empty($products)) {
         foreach ($products as $id => $p) {
             if (!isset($all[$id])) {
+                $storyParagraphs = !empty($p['story_paragraphs']) 
+                    ? (array)$p['story_paragraphs'] 
+                    : (!empty($p['story']) ? [(string)$p['story']] : generateIceCreamStory($p['name'], 'Gourmet Pint', $p['description']));
+
                 $all[$id] = [
                     'id' => $id,
                     'name' => $p['name'],
@@ -646,6 +682,10 @@ function getAllProducts(): array {
                     'sugar' => $p['sugar'] ?? '19g',
                     'protein' => $p['protein'] ?? '5.4g',
                     'tasting_notes' => $p['tasting_notes'] ?? generateTastingNotes($p['name'], 'tubs', $p['badge'] ?? ''),
+                    'story' => $p['story'] ?? implode("\n\n", $storyParagraphs),
+                    'story_paragraphs' => $storyParagraphs,
+                    'story_subtitle' => $p['story_subtitle'] ?? 'Grand Cru Reserve • Slow-Churned Artisanal Pint',
+                    'story_quote' => $p['story_quote'] ?? 'Single-origin ingredients folded into double-creamed farm milk for pure luxury in every scoop.',
                     'storage' => 'Sub-Zero -18°C or colder',
                     'shelf_life' => '12 Months from production date',
                     'origin' => 'Foreign Company Singapore Samarkand • Tashkent Plant',

@@ -408,6 +408,248 @@
 }
 
 /* ========================================================
+   2.5 ABOUT THIS ICE CREAM / FLAVOR STORY & CRAFT
+   ======================================================== */
+.section-about-treat {
+  padding: 64px 0;
+  background: radial-gradient(circle at 10% 20%, rgba(212, 139, 56, 0.05) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, rgba(142, 28, 61, 0.05) 0%, transparent 40%),
+              #FAF6F0;
+  border-bottom: 1px solid rgba(58, 32, 26, 0.06);
+}
+
+.about-treat-card {
+  background: #FFFFFF;
+  border-radius: 28px;
+  padding: 52px 48px;
+  box-shadow: 0 16px 45px rgba(58, 32, 26, 0.06);
+  border: 1px solid rgba(142, 28, 61, 0.08);
+}
+
+.about-treat-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.95fr;
+  gap: 52px;
+  align-items: start;
+}
+
+.about-treat-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--art-berry, #8E1C3D);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.about-treat-kicker .sparkle-icon {
+  color: #D48B38;
+}
+
+.about-treat-title {
+  font-family: var(--font-cinzel, 'Cinzel', serif);
+  font-size: 2.15rem;
+  font-weight: 700;
+  color: var(--art-cocoa, #3A201A);
+  line-height: 1.25;
+  margin: 0 0 8px 0;
+}
+
+.about-treat-subtitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #9A6A38;
+  margin: 0 0 24px 0;
+}
+
+.about-treat-body {
+  margin-bottom: 32px;
+}
+
+.about-treat-body p {
+  font-size: 0.98rem;
+  line-height: 1.78;
+  color: #4A332D;
+  margin: 0 0 16px 0;
+}
+
+.about-treat-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* 3 Craft Pillars */
+.about-craft-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(58, 32, 26, 0.08);
+}
+
+.craft-pillar-item {
+  background: #FFFDF9;
+  border: 1px solid rgba(212, 139, 56, 0.2);
+  border-radius: 16px;
+  padding: 18px 16px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.craft-pillar-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(58, 32, 26, 0.06);
+}
+
+.pillar-icon {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.pillar-content h4 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--art-cocoa, #3A201A);
+  margin: 0 0 4px 0;
+}
+
+.pillar-content p {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #6D4C41;
+  margin: 0;
+}
+
+/* Right Aside: Quote & Specs */
+.about-treat-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about-quote-box {
+  background: linear-gradient(135deg, #3A201A 0%, #4D251D 100%);
+  border-radius: 22px;
+  padding: 32px 28px;
+  color: #FFF;
+  border: 1px solid rgba(229, 195, 120, 0.25);
+  box-shadow: 0 12px 30px rgba(58, 32, 26, 0.15);
+  position: relative;
+}
+
+.quote-mark {
+  font-family: var(--font-cinzel, 'Cinzel', serif);
+  font-size: 3.5rem;
+  line-height: 0.8;
+  color: #D48B38;
+  opacity: 0.6;
+  margin-bottom: 8px;
+}
+
+.about-quote-text {
+  font-size: 1.02rem;
+  line-height: 1.65;
+  font-style: italic;
+  color: #F8ECE1;
+  margin: 0 0 20px 0;
+}
+
+.quote-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 14px;
+}
+
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8E1C3D 0%, #D48B38 100%);
+  color: #FFF;
+  font-weight: 800;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #F0D59A;
+  flex-shrink: 0;
+}
+
+.quote-author strong {
+  display: block;
+  font-size: 0.88rem;
+  color: #FFF;
+}
+
+.quote-author span {
+  font-size: 0.75rem;
+  color: #E5C378;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.about-spec-strip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.spec-cell {
+  background: #FAF4EE;
+  border: 1px solid rgba(58, 32, 26, 0.08);
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.spec-label {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #8C6A60;
+  margin-bottom: 3px;
+}
+
+.spec-value {
+  display: block;
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--art-cocoa, #3A201A);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .about-treat-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  
+  .about-treat-card {
+    padding: 36px 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-craft-pillars {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-spec-strip {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-treat-title {
+    font-size: 1.7rem;
+  }
+}
+
+/* ========================================================
    3. SUPERMARKET RETAILERS CARD
    ======================================================== */
 .section-retailers {

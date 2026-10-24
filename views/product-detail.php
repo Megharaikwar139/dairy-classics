@@ -14,6 +14,11 @@ $pBadge = (string)($product['badge'] ?? 'Artisanal Craft');
 $pImage = (string)($product['image'] ?? 'assets/images/dairy-classic-logo.jpg');
 $pReviews = (int)($product['reviews_count'] ?? 1500);
 $pNotes = (array)($product['tasting_notes'] ?? []);
+$pStoryParagraphs = !empty($product['story_paragraphs']) && is_array($product['story_paragraphs']) 
+    ? $product['story_paragraphs'] 
+    : (!empty($product['story']) ? [(string)$product['story']] : (function_exists('generateIceCreamStory') ? generateIceCreamStory($pName, $pCat, $pDesc) : [$pDesc]));
+$pStorySubtitle = (string)($product['story_subtitle'] ?? 'Artisanal Craftsmanship & Heritage Flavor Experience');
+$pStoryQuote = (string)($product['story_quote'] ?? 'Crafted with 100% single-farm fresh dairy and slow-churned for an unforgettable velvety taste.');
 $safeRelated = (is_iterable($relatedProducts ?? null)) ? $relatedProducts : [];
 ?>
 <!DOCTYPE html>
@@ -123,6 +128,95 @@ $safeRelated = (is_iterable($relatedProducts ?? null)) ? $relatedProducts : [];
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             <span>+99878 120 33 77</span>
           </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       ABOUT THIS ICE CREAM / FLAVOR STORY & CRAFTSMANSHIP
+       ======================================================== -->
+  <section class="section-about-treat" id="about-treat">
+    <div class="container">
+      <div class="about-treat-card">
+        <div class="about-treat-grid">
+          <!-- Left Column: Story Content -->
+          <div class="about-treat-main">
+            <div class="about-treat-kicker">
+              <span class="sparkle-icon">✦</span>
+              <span>THE ARTISANAL STORY</span>
+            </div>
+
+            <h2 class="about-treat-title">About <?= htmlspecialchars($pName, ENT_QUOTES, 'UTF-8') ?></h2>
+            <p class="about-treat-subtitle"><?= htmlspecialchars($pStorySubtitle, ENT_QUOTES, 'UTF-8') ?></p>
+
+            <div class="about-treat-body">
+              <?php foreach ($pStoryParagraphs as $paragraph): ?>
+                <p><?= htmlspecialchars($paragraph, ENT_QUOTES, 'UTF-8') ?></p>
+              <?php endforeach; ?>
+            </div>
+
+            <!-- Key Craftsmanship Pillars -->
+            <div class="about-craft-pillars">
+              <div class="craft-pillar-item">
+                <div class="pillar-icon">🥛</div>
+                <div class="pillar-content">
+                  <h4>100% Single-Farm Milk</h4>
+                  <p>Fresh whole cream churned slowly for an exquisitely dense, velvety texture.</p>
+                </div>
+              </div>
+              <div class="craft-pillar-item">
+                <div class="pillar-icon">🌱</div>
+                <div class="pillar-content">
+                  <h4>Pure &amp; Natural Flavors</h4>
+                  <p>Real cocoa ribbons, fruit essences, and roasted nuts with zero compromises.</p>
+                </div>
+              </div>
+              <div class="craft-pillar-item">
+                <div class="pillar-icon">❄️</div>
+                <div class="pillar-content">
+                  <h4>-18°C Controlled Cold Chain</h4>
+                  <p>Quick-frozen to lock in crisp freshness straight to your neighborhood freezer.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Visual Hallmark & Quote Box -->
+          <div class="about-treat-aside">
+            <div class="about-quote-box">
+              <div class="quote-mark">“</div>
+              <blockquote class="about-quote-text">
+                <?= htmlspecialchars($pStoryQuote, ENT_QUOTES, 'UTF-8') ?>
+              </blockquote>
+              <div class="quote-author">
+                <div class="author-avatar">DC</div>
+                <div>
+                  <strong>Dairy Classic Master Creamery</strong>
+                  <span>Since 1996 &bull; Uzbekistan</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-spec-strip">
+              <div class="spec-cell">
+                <span class="spec-label">Category</span>
+                <span class="spec-value"><?= htmlspecialchars($pCat, ENT_QUOTES, 'UTF-8') ?></span>
+              </div>
+              <div class="spec-cell">
+                <span class="spec-label">Serving Size</span>
+                <span class="spec-value"><?= htmlspecialchars($pSize, ENT_QUOTES, 'UTF-8') ?></span>
+              </div>
+              <div class="spec-cell">
+                <span class="spec-label">Shelf Life</span>
+                <span class="spec-value">12 Months (-18°C)</span>
+              </div>
+              <div class="spec-cell">
+                <span class="spec-label">Quality Standard</span>
+                <span class="spec-value">UzStandard &bull; Halal</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
