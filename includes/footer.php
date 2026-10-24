@@ -1,6 +1,8 @@
 <?php
 // includes/footer.php - Exact 4-Column Footer from dairyclassics.com
 $current_design = isset($design) ? $design : 1;
+$is_subpage = isset($is_subpage) ? $is_subpage : false;
+$home_url = $is_subpage ? ($current_design == 2 ? 'design2.php' : 'index.php') : '';
 ?>
 
 <!-- Quick View Tasting Notes Modal (Static) -->
@@ -101,13 +103,14 @@ $current_design = isset($design) ? $design : 1;
       <div class="fl-links-col">
         <h4 class="fl-col-heading">Quicklinks</h4>
         <ul class="fl-links-list">
-          <li><a href="#about-heritage">About Us</a></li>
-          <li><a href="#recipes">Blog &amp; Recipes</a></li>
-          <li><a href="#faqs">FAQs</a></li>
-          <li><a href="#contact-us">Contact Us</a></li>
-          <li><a href="#catalog-showcase">Cones &amp; Sticks</a></li>
-          <li><a href="#categories">Cups &amp; Biscuits</a></li>
-          <li><a href="#flavors">Gourmet Tubs</a></li>
+          <li><a href="<?= $home_url ?>#about-heritage">About Us</a></li>
+          <li><a href="career.php" style="color: #F0D59A; font-weight: 600;">Careers (We're Hiring!)</a></li>
+          <li><a href="<?= $home_url ?>#recipes">Blog &amp; Recipes</a></li>
+          <li><a href="<?= $home_url ?>#faqs">FAQs</a></li>
+          <li><a href="<?= $home_url ?>#contact-us">Contact Us</a></li>
+          <li><a href="<?= $home_url ?>#catalog-showcase">Cones &amp; Sticks</a></li>
+          <li><a href="<?= $home_url ?>#categories">Cups &amp; Biscuits</a></li>
+          <li><a href="<?= $home_url ?>#flavors">Gourmet Tubs</a></li>
         </ul>
       </div>
 

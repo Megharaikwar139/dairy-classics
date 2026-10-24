@@ -83,20 +83,27 @@ button {
   top: 0;
   z-index: 1000;
   width: 100%;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
+.site-header .header-inner,
 .header-inner {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 clamp(20px, 3.5vw, 56px) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  height: 76px;
+  height: 82px;
+  gap: 24px;
+  box-sizing: border-box;
 }
 
 .brand-logo {
   display: flex !important;
   align-items: center !important;
-  gap: 12px;
+  gap: 14px;
   text-decoration: none;
   flex-shrink: 0;
 }
@@ -105,9 +112,9 @@ button {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  height: 46px;
+  height: 48px;
   width: auto;
-  border-radius: 6px;
+  border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
   border: 1px solid rgba(212, 175, 55, 0.4);
@@ -116,9 +123,9 @@ button {
 }
 
 .brand-logo-img {
-  height: 46px !important;
+  height: 48px !important;
   width: auto !important;
-  max-width: 52px;
+  max-width: 56px;
   object-fit: contain;
   display: block;
 }
@@ -135,6 +142,7 @@ button {
   letter-spacing: 0.08em;
   line-height: 1.1;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .brand-tagline-sub {
@@ -142,17 +150,22 @@ button {
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .main-nav {
   display: block;
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .main-nav .nav-links {
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
-  gap: 32px !important;
+  justify-content: center !important;
+  gap: clamp(16px, 1.8vw, 32px) !important;
   list-style: none !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -164,12 +177,18 @@ button {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   transition: color 0.2s ease;
+  white-space: nowrap;
 }
 
 .header-actions {
   display: flex !important;
   align-items: center !important;
-  gap: 14px !important;
+  gap: 20px !important;
+  flex-shrink: 0;
+}
+
+.btn-header-cta {
+  white-space: nowrap;
 }
 
 .cart-trigger-btn {
@@ -3130,11 +3149,63 @@ button {
   color: #E5C378;
 }
 
+/* Direct Header Career Link & Hiring Badge */
+.nav-link-career {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+.nav-hiring-badge {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: linear-gradient(135deg, #8E1C3D 0%, #D31D45 100%);
+  color: #FFFFFF !important;
+  padding: 2px 7px;
+  border-radius: 999px;
+  line-height: 1.2;
+  box-shadow: 0 2px 6px rgba(142, 28, 61, 0.28);
+}
+
+.theme-luxury .nav-hiring-badge {
+  background: linear-gradient(135deg, #D48B38 0%, #E5C378 100%);
+  color: #200E0A !important;
+  box-shadow: 0 2px 6px rgba(212, 139, 56, 0.35);
+}
+
+.nav-link.active-link {
+  color: var(--art-berry, #8E1C3D) !important;
+  font-weight: 800 !important;
+}
+
+.theme-luxury .nav-link.active-link {
+  color: #E5C378 !important;
+}
+
+@media (max-width: 1140px) {
+  .main-nav .nav-links {
+    gap: 18px !important;
+  }
+}
+
+@media (max-width: 960px) {
+  .main-nav .nav-links {
+    gap: 12px !important;
+  }
+  .main-nav .nav-link {
+    font-size: 0.82rem;
+  }
+}
+
 /* Header Social Media Strip */
 .header-socials-strip {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .header-soc-btn {

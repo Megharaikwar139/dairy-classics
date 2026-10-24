@@ -1,6 +1,8 @@
 <?php
 // includes/header.php - Exact Header Menu & Socials from dairyclassics.com
 $current_design = isset($design) ? $design : 1;
+$is_subpage = isset($is_subpage) ? $is_subpage : false;
+$home_url = $is_subpage ? ($current_design == 2 ? 'design2.php' : 'index.php') : '';
 ?>
 
 <!-- Instant Mobile Menu Control Script -->
@@ -62,7 +64,7 @@ $current_design = isset($design) ? $design : 1;
 
 <!-- Header Navigation Bar -->
 <header class="site-header <?= $current_design == 2 ? 'header-luxury' : 'header-playful' ?>" id="site-header">
-  <div class="container header-inner">
+  <div class="header-inner">
     <!-- Brand Logo (Official Dairy Classic Logo) -->
     <a href="<?= $current_design == 2 ? 'design2.php' : 'index.php' ?>" class="brand-logo" aria-label="Dairy Classic Home">
       <div class="brand-logo-badge">
@@ -77,10 +79,10 @@ $current_design = isset($design) ? $design : 1;
     <!-- Exact Navigation from dairyclassics.com -->
     <nav class="main-nav" aria-label="Main Navigation">
       <ul class="nav-links">
-        <li><a href="#catalog-showcase" class="nav-link" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('cones')">Cones</a></li>
-        <li><a href="#catalog-showcase" class="nav-link" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('sticks')">Sticks</a></li>
-        <li><a href="#catalog-showcase" class="nav-link" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('cups')">Cups</a></li>
-        <li><a href="#catalog-showcase" class="nav-link" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('biscuit')">Biscuit</a></li>
+        <li><a href="<?= $home_url ?>#catalog-showcase" class="nav-link" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('cones')">Cones</a></li>
+        <li><a href="<?= $home_url ?>#catalog-showcase" class="nav-link" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('sticks')">Sticks</a></li>
+        <li><a href="<?= $home_url ?>#catalog-showcase" class="nav-link" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('cups')">Cups</a></li>
+        <li><a href="<?= $home_url ?>#catalog-showcase" class="nav-link" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('biscuit')">Biscuit</a></li>
         
         <!-- Others Dropdown (Exact match to dairyclassics.com) -->
         <li class="nav-item-dropdown">
@@ -89,12 +91,20 @@ $current_design = isset($design) ? $design : 1;
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
           </a>
           <ul class="nav-dropdown-menu">
-            <li><a href="#catalog-showcase" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('cassatta')">Cassatta</a></li>
-            <li><a href="#flavors">Tubs</a></li>
-            <li><a href="#about-heritage">About Us</a></li>
-            <li><a href="#faqs">FAQs</a></li>
-            <li><a href="#contact-us">Contact Us</a></li>
+            <li><a href="<?= $home_url ?>#catalog-showcase" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('cassatta')">Cassatta</a></li>
+            <li><a href="<?= $home_url ?>#flavors">Tubs</a></li>
+            <li><a href="<?= $home_url ?>#about-heritage">About Us</a></li>
+            <li><a href="career.php" class="<?= (isset($current_page) && $current_page === 'career') ? 'active-link' : '' ?>" style="<?= (isset($current_page) && $current_page === 'career') ? 'color: var(--art-berry); font-weight: 700;' : '' ?>">Careers</a></li>
+            <li><a href="<?= $home_url ?>#faqs">FAQs</a></li>
+            <li><a href="<?= $home_url ?>#contact-us">Contact Us</a></li>
           </ul>
+        </li>
+
+        <!-- Direct Careers Navigation Item in Main Header -->
+        <li>
+          <a href="career.php" class="nav-link <?= (isset($current_page) && $current_page === 'career') ? 'active-link' : '' ?>">
+            <span>Careers</span>
+          </a>
         </li>
       </ul>
     </nav>
@@ -119,7 +129,7 @@ $current_design = isset($design) ? $design : 1;
         </a>
       </div>
 
-      <a href="#catalog-showcase" class="btn-header-cta <?= $current_design == 2 ? 'btn-cta-gold' : 'btn-cta-pastel' ?>">
+      <a href="<?= $home_url ?>#catalog-showcase" class="btn-header-cta <?= $current_design == 2 ? 'btn-cta-gold' : 'btn-cta-pastel' ?>">
         <span>Explore Treats</span>
       </a>
 
@@ -150,24 +160,25 @@ $current_design = isset($design) ? $design : 1;
   <div class="mobile-drawer-body">
     <div class="mobile-nav-group-title">Treat Categories</div>
     <ul class="mobile-nav-list">
-      <li><a href="#catalog-showcase" class="mobile-nav-item" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('cones'); window.closeMobileMenu(event);">🍦 Cones</a></li>
-      <li><a href="#catalog-showcase" class="mobile-nav-item" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('sticks'); window.closeMobileMenu(event);">🍫 Sticks &amp; Bars</a></li>
-      <li><a href="#catalog-showcase" class="mobile-nav-item" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('cups'); window.closeMobileMenu(event);">🍧 Cups &amp; Sundaes</a></li>
-      <li><a href="#catalog-showcase" class="mobile-nav-item" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('biscuit'); window.closeMobileMenu(event);">🍪 Biscuit Sandwiches</a></li>
-      <li><a href="#catalog-showcase" class="mobile-nav-item" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('cassatta'); window.closeMobileMenu(event);">🍰 Cassatta Cake</a></li>
-      <li><a href="#flavors" class="mobile-nav-item" onclick="window.closeMobileMenu(event);">🍨 Gourmet Tubs</a></li>
+      <li><a href="<?= $home_url ?>#catalog-showcase" class="mobile-nav-item" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('cones'); window.closeMobileMenu(event);">🍦 Cones</a></li>
+      <li><a href="<?= $home_url ?>#catalog-showcase" class="mobile-nav-item" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('sticks'); window.closeMobileMenu(event);">🍫 Sticks &amp; Bars</a></li>
+      <li><a href="<?= $home_url ?>#catalog-showcase" class="mobile-nav-item" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('cups'); window.closeMobileMenu(event);">🍧 Cups &amp; Sundaes</a></li>
+      <li><a href="<?= $home_url ?>#catalog-showcase" class="mobile-nav-item" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('biscuit'); window.closeMobileMenu(event);">🍪 Biscuit Sandwiches</a></li>
+      <li><a href="<?= $home_url ?>#catalog-showcase" class="mobile-nav-item" onclick="if(window.filterCatalogCategory) window.filterCatalogCategory('cassatta'); window.closeMobileMenu(event);">🍰 Cassatta Cake</a></li>
+      <li><a href="<?= $home_url ?>#flavors" class="mobile-nav-item" onclick="window.closeMobileMenu(event);">🍨 Gourmet Tubs</a></li>
     </ul>
 
     <div class="mobile-nav-group-title">Explore &amp; Info</div>
     <ul class="mobile-nav-list">
-      <li><a href="#about-heritage" class="mobile-nav-item" onclick="window.closeMobileMenu(event);">📖 Our Heritage</a></li>
-      <li><a href="#recipes" class="mobile-nav-item" onclick="window.closeMobileMenu(event);">🍹 Signature Recipes</a></li>
-      <li><a href="#faqs" class="mobile-nav-item" onclick="window.closeMobileMenu(event);">❓ FAQs</a></li>
-      <li><a href="#contact-us" class="mobile-nav-item" onclick="window.closeMobileMenu(event);">📞 Contact Us</a></li>
+      <li><a href="<?= $home_url ?>#about-heritage" class="mobile-nav-item" onclick="window.closeMobileMenu(event);">📖 Our Heritage</a></li>
+      <li><a href="career.php" class="mobile-nav-item" onclick="window.closeMobileMenu(event);" style="<?= (isset($current_page) && $current_page === 'career') ? 'color: #D48B38; font-weight: 700;' : '' ?>">💼 Careers &amp; Jobs <span style="font-size: 0.62rem; background: #8E1C3D; color: #fff; padding: 2px 6px; border-radius: 99px; margin-left: 6px;">We're Hiring</span></a></li>
+      <li><a href="<?= $home_url ?>#recipes" class="mobile-nav-item" onclick="window.closeMobileMenu(event);">🍹 Signature Recipes</a></li>
+      <li><a href="<?= $home_url ?>#faqs" class="mobile-nav-item" onclick="window.closeMobileMenu(event);">❓ FAQs</a></li>
+      <li><a href="<?= $home_url ?>#contact-us" class="mobile-nav-item" onclick="window.closeMobileMenu(event);">📞 Contact Us</a></li>
     </ul>
 
     <div class="mobile-drawer-footer">
-      <a href="#catalog-showcase" class="mobile-drawer-cta" onclick="window.closeMobileMenu(event);">
+      <a href="<?= $home_url ?>#catalog-showcase" class="mobile-drawer-cta" onclick="window.closeMobileMenu(event);">
         <span>Explore Full Menu</span>
       </a>
       <div class="mobile-drawer-socials">

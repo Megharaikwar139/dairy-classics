@@ -721,3 +721,209 @@ $store_locations = [
         'phone' => '+99878 120 33 78'
     ]
 ];
+
+// ========================================================
+// CAREERS & TALENT HUB DATA (Since 1996)
+// ========================================================
+$career_departments = [
+    'all' => 'All Departments',
+    'rnd' => 'Quality & Food Science (R&D)',
+    'supply-chain' => 'Cold Chain & Logistics',
+    'sales' => 'Sales, Marketing & Brand'
+];
+
+$career_stats = [
+    ['val' => '30+', 'lbl' => 'Years of Heritage', 'sub' => 'Delighting Uzbekistan since 1996'],
+    ['val' => '80,000L', 'lbl' => 'Daily Capacity', 'sub' => 'Modern European ice cream plant'],
+    ['val' => '450+', 'lbl' => 'Passionate Artisans', 'sub' => 'Chemists, engineers & leaders'],
+    ['val' => '94%', 'lbl' => 'Team Retention', 'sub' => 'Culture of warmth & respect']
+];
+
+$career_benefits = [
+    [
+        'icon' => '🍦',
+        'title' => 'Daily Sweet Tasting Perks',
+        'desc' => 'Enjoy daily tastings of new gelato batches, fresh waffle cones, and quarterly seasonal gift hampers for you and your family.'
+    ],
+    [
+        'icon' => '🏥',
+        'title' => 'Comprehensive Healthcare',
+        'desc' => 'Full medical, dental, and wellness insurance coverage with subsidized packages for immediate family members.'
+    ],
+    [
+        'icon' => '🎓',
+        'title' => 'European Academy & Mentorship',
+        'desc' => 'Masterclasses led by Italian & Danish dairy technologists, sponsored certifications, and dedicated executive mentorship.'
+    ],
+    [
+        'icon' => '⚙️',
+        'title' => 'State-of-the-Art Facilities',
+        'desc' => 'Work in an ultra-modern, climate-controlled, European-standard facility equipped with cutting-edge automated production lines.'
+    ],
+    [
+        'icon' => '🚌',
+        'title' => 'Free Shuttle & Gourmet Meals',
+        'desc' => 'Free daily company transportation across Tashkent and freshly prepared, wholesome multi-course lunches provided daily.'
+    ],
+    [
+        'icon' => '📈',
+        'title' => 'Merit Bonuses & Fast-Track Growth',
+        'desc' => 'Competitive base pay reviewed annually, performance bonuses, and transparent internal promotion pathways.'
+    ]
+];
+
+$job_openings = [
+    [
+        'id' => 'senior-food-technologist',
+        'title' => 'Senior Dairy Food Technologist & Sensory Specialist',
+        'department' => 'Quality & Food Science (R&D)',
+        'category_key' => 'rnd',
+        'location' => 'Tashkent (Main Factory)',
+        'location_key' => 'tashkent',
+        'type' => 'Full-Time • Permanent',
+        'experience' => '4+ Years',
+        'workplace' => 'On-site Laboratory',
+        'urgent' => true,
+        'featured' => true,
+        'short_desc' => 'Lead recipe formulation, overrun control, and sensory innovation for our signature gelato pints and enrobed wafer cones.',
+        'overview' => 'As our Senior Dairy Food Technologist, you will be at the heart of Dairy Classic’s flavor revolution. You will collaborate directly with European ingredient partners and our master churners to formulate decadent, clean-label ice creams with zero artificial preservatives.',
+        'responsibilities' => [
+            'Develop and scale new flavor profiles for gourmet tubs, biscuit sandwiches, and chocolate-coated sticks.',
+            'Optimize emulsion stability, overrun percentages, and melt-down characteristics under varying temperatures.',
+            'Oversee pilot batch churns in our dedicated innovation laboratory in Tashkent.',
+            'Establish sensory tasting protocols and benchmark against international premium confectionery standards.',
+            'Partner with Quality Assurance to ensure compliance with strict UzStandard & European hygiene regulations.'
+        ],
+        'requirements' => [
+            'Bachelor’s or Master’s in Dairy Science, Food Technology, or Chemical Engineering.',
+            'Minimum 4 years of proven formulation experience in ice cream, dairy processing, or confectionery.',
+            'Deep understanding of milk fats, stabilizers, pasteurization thermals, and natural flavoring systems.',
+            'Strong sensory acuity and passion for artisanal texture craftsmanship.',
+            'Fluency in Russian and Uzbek; technical English is an advantage.'
+        ],
+        'perks' => [
+            'Direct access to European dairy masterclasses and R&D trips',
+            'Full medical & dental insurance coverage',
+            'Annual performance and innovation bonus pool',
+            'Unlimited ice cream test kitchen privileges'
+        ]
+    ],
+    [
+        'id' => 'cold-chain-logistics-manager',
+        'title' => 'Cold Chain Logistics & Fleet Operations Manager',
+        'department' => 'Cold Chain & Logistics',
+        'category_key' => 'supply-chain',
+        'location' => 'Tashkent & Samarkand Hubs',
+        'location_key' => 'tashkent',
+        'type' => 'Full-Time • Permanent',
+        'experience' => '3+ Years',
+        'workplace' => 'Hybrid & Depots',
+        'urgent' => false,
+        'featured' => true,
+        'short_desc' => 'Orchestrate continuous -18°C refrigerated fleet distribution from our 80,000L factory to 1,200+ partner supermarkets.',
+        'overview' => 'Ice cream quality is only as strong as its sub-zero cold chain. You will manage our fleet of GPS-monitored refrigerated trucks, cross-dock warehouses, and regional dispatch hubs in Tashkent, Samarkand, and Bukhara to guarantee perfect freshness.',
+        'responsibilities' => [
+            'Direct daily fleet dispatch schedules and optimize multi-stop retail delivery routes across Uzbekistan.',
+            'Monitor real-time telemetric temperature logs inside all delivery containers to prevent thermal deviations.',
+            'Supervise deep-freeze warehouse operations, inventory rotation (FIFO), and rapid loading docks.',
+            'Negotiate maintenance contracts for mobile refrigeration units (Carrier/Thermo King).',
+            'Lead a dedicated team of drivers, dispatchers, and warehouse logistics supervisors.'
+        ],
+        'requirements' => [
+            'Degree in Supply Chain Management, Logistics, or Business Administration.',
+            '3+ years managing refrigerated fleet (cold chain) or FMCG perishable product distribution.',
+            'Proficiency with GPS fleet telematics, WMS, and ERP routing systems.',
+            'Proven crisis-management skills to handle route delays and extreme summer temperature challenges.',
+            'Fluency in Uzbek and Russian.'
+        ],
+        'perks' => [
+            'Company car allowance & fuel card',
+            'Performance-linked quarterly delivery bonus',
+            'Corporate smartphone and communication package',
+            'Free hot lunches and shuttle access'
+        ]
+    ],
+    [
+        'id' => 'key-account-manager-retail',
+        'title' => 'Key Account Manager – Modern Supermarket Chains',
+        'department' => 'Sales, Marketing & Brand',
+        'category_key' => 'sales',
+        'location' => 'Tashkent (Hybrid / Field)',
+        'location_key' => 'tashkent',
+        'type' => 'Full-Time • Permanent',
+        'experience' => '3+ Years',
+        'workplace' => 'Hybrid / Field',
+        'urgent' => true,
+        'featured' => false,
+        'short_desc' => 'Drive commercial growth, prime freezer placements, and brand activation across major supermarket chains and food chains.',
+        'overview' => 'Dairy Classic has been loved by Uzbek families for 30 years. As Key Account Manager, you will strengthen our presence in top tier supermarket banners (Korzinka, Makro, Havas) and expand our footprint into hospitality and premium cafes.',
+        'responsibilities' => [
+            'Manage strategic partnerships with national retail accounts to expand SKU distribution and share-of-shelf.',
+            'Negotiate annual joint business plans, promotional trade calendars, and branded freezer placements.',
+            'Analyze weekly sell-out velocity, category trends, and competitive promotional activities.',
+            'Coordinate with merchandising teams to ensure eye-catching brand displays and zero out-of-stock situations.',
+            'Identify emerging commercial channels, such as convenience stores, gas stations, and online quick-commerce.'
+        ],
+        'requirements' => [
+            'Degree in Business, Marketing, or Economics.',
+            '3+ years in FMCG key account management or trade marketing in Uzbekistan.',
+            'Established working relationships with major supermarket chain buyers.',
+            'Exceptional negotiation, presentation, and data-driven analytical capabilities.',
+            'Bilingual in Russian and Uzbek; English is a strong asset.'
+        ],
+        'perks' => [
+            'Highly attractive uncapped quarterly sales commission',
+            'Company car allowance & travel expense coverage',
+            'Generous annual merchandise allowance and family hampers',
+            'Flexible hybrid working arrangements'
+        ]
+    ]
+];
+
+$career_testimonials = [
+    [
+        'name' => 'Dilshod R.',
+        'role' => 'Production Shift Lead',
+        'tenure' => '8 Years with Dairy Classic',
+        'quote' => 'I joined Dairy Classic as a line technician in 2018. Over the years, the company invested in my European certification and gave me the trust to supervise our most advanced continuous churn lines. There is immense pride in seeing families all over Tashkent enjoying ice creams we crafted with care.',
+        'badge' => 'Production Craft'
+    ],
+    [
+        'name' => 'Elena V.',
+        'role' => 'Senior Food Safety & Microbiologist',
+        'tenure' => '5 Years with Dairy Classic',
+        'quote' => 'Our laboratory standards rival the best European dairy plants. Working with 100% natural milk and real fruit ingredients gives our quality team real purpose. Plus, tasting every new flavor iteration right out of the test churn is the sweetest job in the country!',
+        'badge' => 'Quality & R&D'
+    ],
+    [
+        'name' => 'Jasur K.',
+        'role' => 'Regional Logistics Coordinator',
+        'tenure' => '4 Years with Dairy Classic',
+        'quote' => 'Managing cold-chain transport in Uzbekistan’s hot summers is a true operational science. Dairy Classic gives us modern GPS-monitored refrigerated vehicles and genuine team solidarity. Leadership treats every employee like family.',
+        'badge' => 'Cold Chain Logistics'
+    ]
+];
+
+$career_faqs = [
+    [
+        'q' => 'What is the hiring and interview timeline at Dairy Classic?',
+        'a' => 'Our talent team reviews every application within 48 hours. The complete process typically takes 10 to 14 days, comprising an initial discovery chat, a practical role discussion (with an optional factory tour in Tashkent), and a formal offer.'
+    ],
+    [
+        'q' => 'Do you accept applications from students and fresh graduates?',
+        'a' => 'Yes! We actively welcome final-year students and graduates through our annual "Future Dairy Leaders" 12-month paid rotational program, as well as internship opportunities in our Quality Lab and Creative Studio.'
+    ],
+    [
+        'q' => 'Where are the positions located and is transportation provided?',
+        'a' => 'Most manufacturing, engineering, and laboratory roles are located at our main facility in БУТ 5, Tashkent. We provide free daily company shuttle buses connecting convenient transit hubs throughout Tashkent. We also have regional opportunities in Samarkand.'
+    ],
+    [
+        'q' => 'Can I submit a spontaneous application if my dream role is not listed?',
+        'a' => 'Absolutely! We are continuously expanding our 80,000-litre capacity and developing new product lines. Submit your CV through the Open Application modal, message us on WhatsApp (+998 90 998 2019), or email support@dairyclassic.uz / jkapoor@me.com with your background and goals.'
+    ],
+    [
+        'q' => 'What languages are required to work at Dairy Classic?',
+        'a' => 'Depending on the role, fluency in Uzbek and/or Russian is typically expected for daily workplace collaboration. For R&D and engineering roles interfacing with European machinery partners, working technical English is an appreciated bonus.'
+    ]
+];
+
